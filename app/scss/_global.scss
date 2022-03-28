@@ -1,0 +1,49 @@
+* { margin: 0; padding: 0; }
+
+// Flex
+
+.flex {
+    display: flex;
+
+    &-jc-sb {
+    justify-content: space-between;
+    }
+    &-jc-c {
+        justify-content: center;
+        }
+    &-jc-sa{
+        justify-content: space-around;
+    }
+    &-ai-c {
+    align-items: center;
+    }
+    &-column{
+        flex-direction: column;
+    }
+    &-ai-sb{
+        align-items: space-between;
+    }
+}
+
+body {
+    background: $mediumGray;
+    font-family: 'Red Hat Display', sans-serif;
+
+    .container {
+        margin-top: 1.5rem;
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+
+    .white_box {
+        background: $white;
+        padding: 2rem;
+    }
+    .widget {
+        align-self:flex-end;
+    }
+    .title {
+        margin-bottom: 1.5rem;
+    }
+
+}

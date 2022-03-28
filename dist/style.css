@@ -1,0 +1,71 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.flex-jc-sb {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.flex-jc-c {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.flex-jc-sa {
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.flex-ai-c {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.flex-column {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.flex-ai-sb {
+  -webkit-box-align: space-between;
+      -ms-flex-align: space-between;
+          align-items: space-between;
+}
+
+body {
+  background: #f7f8fa;
+  font-family: 'Red Hat Display', sans-serif;
+}
+
+body .container {
+  margin-top: 1.5rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+body .white_box {
+  background: #ffffff;
+  padding: 2rem;
+}
+
+body .widget {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+body .title {
+  margin-bottom: 1.5rem;
+}
