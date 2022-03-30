@@ -32,6 +32,12 @@
           align-items: center;
 }
 
+.flex-ai-end {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
 .flex-column {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -50,22 +56,51 @@ body {
   font-family: 'Red Hat Display', sans-serif;
 }
 
+body .main_container {
+  height: 100vh;
+}
+
 body .container {
-  margin-top: 1.5rem;
+  margin-top: 1rem;
   padding-left: 3rem;
   padding-right: 3rem;
 }
 
 body .white_box {
   background: #ffffff;
-  padding: 2rem;
+  padding: 1.2rem;
 }
 
-body .widget {
-  -ms-flex-item-align: end;
-      align-self: flex-end;
+body .mb {
+  margin-bottom: 0.5rem;
 }
 
-body .title {
-  margin-bottom: 1.5rem;
+body .ml {
+  margin-left: 0.5rem;
+}
+
+body h4 {
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+body p {
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: gray;
+}
+
+body h2 {
+  font-weight: 700;
+  font-size: 2.1rem;
+}
+
+body .steps {
+  margin-bottom: .4rem;
+}
+
+body .btn {
+  border: solid 1px gray;
+  border-radius: 5px;
+  padding: 0.2rem 0.5rem;
 }

@@ -1,28 +1,38 @@
 
-const ctx = document.getElementById('myChart').getContext('2d');
+const ctx = document.getElementById('myChart');
 const myChart = new Chart(ctx, {
-    type: 'bar',
+    type: 'line',
     data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        labels: ['10:00', '12:00', '14:00', '16:00', '18:00'],
         datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-            ],
+            data: [9, 10, 3, 19, 12],
+            borderColor: '#7FFFD4',
+            fill: false
         }]
     },
     options: {
+        legend: {
+            display: false
+        },
         scales: {
-            y: {
-                beginAtZero: true
-            }
+            yAxes: [{
+                gridLines: {
+                    display: false,
+                },
+                ticks: {
+                    display:false,
+                }   
+            }],
+            xAxes: [{
+                gridLines: {
+                    borderDash: [8,4],
+                }
+            }]
         }
     }
 });
 
+// today function
+
+let dt = new Date().toLocaleDateString();
+document.getElementById('date').innerHTML=dt;

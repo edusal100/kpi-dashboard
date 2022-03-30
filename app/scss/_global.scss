@@ -17,6 +17,9 @@
     &-ai-c {
     align-items: center;
     }
+    &-ai-end{
+        align-items: flex-end;
+    }
     &-column{
         flex-direction: column;
     }
@@ -29,21 +32,47 @@ body {
     background: $mediumGray;
     font-family: 'Red Hat Display', sans-serif;
 
+    .main_container{
+        height: 100vh;
+    }
+
     .container {
-        margin-top: 1.5rem;
+        margin-top: 1rem;
         padding-left: 3rem;
         padding-right: 3rem;
     }
 
     .white_box {
         background: $white;
-        padding: 2rem;
+        padding: 1.2rem;
     }
-    .widget {
-        align-self:flex-end;
+    .mb {
+        margin-bottom: 0.5rem;
     }
-    .title {
-        margin-bottom: 1.5rem;
+    .ml {
+        margin-left: 0.5rem;
+    }
+
+    h4{
+        font-weight: 500;
+        font-size: 1.1rem;
+    }
+    p{
+        font-weight: 500;
+        font-size: 0.9rem;
+        color: gray;
+    }
+    h2 {
+        font-weight: 700;
+        font-size: 2.1rem;
+    }
+    .steps {
+        margin-bottom: .4rem;
+    }
+    .btn {
+        border: solid 1px gray;
+        border-radius: 5px;
+        padding: 0.2rem 0.5rem;
     }
 
 }

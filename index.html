@@ -17,47 +17,28 @@
 </head>
 <body>
 
-    <div class="container flex flex-jc-sb">
-        <div>
-            <h1>Production KPI</h1>
-            <p>Welcome to CRM Dashboard</p>
-        </div>      
-        <div class="widget">
-            <h3>Add Widget</h3>
-        </div>
-    </div>
-
-    <div class="container flex flex-jc-sb">
+    <div class="main_container container flex flex-jc-c flex-ai-c">
         <div class="white_box">
-                <div class="title flex flex-jc-sb">
-                    <p>Email Sent</p>
-                    <p>This week</p>
+                <div class="mb flex flex-jc-sb">
+                    <div>
+                        <h4>Activity</h4>
+                    </div>
+                    <div class="flex">
+                        <p class="btn">Week</p>
+                        <p class="ml btn">Day</p>
+                    </div>
                 </div>
+                    <p>Today</p>
+                    <div class="mb flex flex-ai-end">
+                        <h2>5 789</h2>
+                        <p class="steps ml">steps</p>
+                    </div>
                 <div>
                     <canvas id="myChart"></canvas>
                 </div>
-        </div> 
-        <div class="white_box">
-            <div class="title flex flex-jc-sb">
-                <p>Email Sent</p>
-                <p>This week</p>
-            </div>
-            <div>
-                <canvas id="myChart"></canvas>
-            </div>
-        </div>
-        <div class="white_box">
-            <div class="title flex flex-jc-sb">
-                <p>Email Sent</p>
-                <p>This week</p>
-            </div>
-            <div>
-                <canvas id="myChart"></canvas>
-            </div>
-        </div>    
-    </div>
+         </div>
     
-
+    </div>
 
     <script src="app/js/chart.js"></script>
 
