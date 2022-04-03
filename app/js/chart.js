@@ -9,84 +9,50 @@ datasets: [{
 }]
 };
 
+//chart options
+
+myOptions = { legend: {
+        display: false
+    },
+    scales: {
+        yAxes: [{
+            gridLines: {
+                display: false,
+            },
+            ticks: {
+                display:false,
+            }   
+        }],
+        xAxes: [{
+            gridLines: {
+                borderDash: [8,4],
+            }
+        }] }
+    }
+
 //Chart JS
 
 const ctx = document.getElementById('myChart');
 const myChart = new Chart(ctx, {
     type: 'line',
     data: myData, 
-    options: {
-        legend: {
-            display: false
-        },
-        scales: {
-            yAxes: [{
-                gridLines: {
-                    display: false,
-                },
-                ticks: {
-                    display:false,
-                }   
-            }],
-            xAxes: [{
-                gridLines: {
-                    borderDash: [8,4],
-                }
-            }] }
-        }
+    options: myOptions,
     })
 
 // Chart update function with condition, it destroys and rerender with line or bar depending on the button clicked
 
 function chartType(type){
   myChart.destroy();
-  if (type === 'line') {
+  if(type === 'line') {
+  myChart = new Chart(ctx, {
+    type: 'line',
+    data: myData, 
+    options: myOptions,
+    })
+  } else {
     myChart = new Chart(ctx, {
-        type: 'line',
+        type: 'bar',
         data: myData, 
-        options: {
-            legend: {
-                display: false
-            },
-            scales: {
-                yAxes: [{
-                    gridLines: {
-                        display: false,
-                    },
-                    ticks: {
-                        display:false,
-                    }   
-                }],
-                xAxes: [{
-                    gridLines: {
-                        borderDash: [8,4],
-                    }
-                }] }
-            }
+        options: myOptions,
         })
-    } else {
-        myChart = new Chart(ctx, {
-            type: 'bar',
-            data: myData, 
-            options: {
-                legend: {
-                    display: false
-                },
-                scales: {
-                    yAxes: [{
-                        gridLines: {
-                            display: false,
-                        },
-                        ticks: {
-                            display:false,
-                        }   
-                    }],
-                    xAxes: [{
-                        gridLines: {
-                            borderDash: [8,4],
-                        }
-                    }] }
-                }
-            })
-
-    }}
+  }}
