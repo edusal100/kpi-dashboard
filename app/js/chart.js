@@ -10,7 +10,6 @@ datasets: [{
 };
 
 //chart options
-
 myOptions = { legend: {
         display: false
     },
@@ -30,29 +29,22 @@ myOptions = { legend: {
         }] }
     }
 
-//Chart JS
+//Default chart with type: line
 
 const ctx = document.getElementById('myChart');
 const myChart = new Chart(ctx, {
     type: 'line',
     data: myData, 
     options: myOptions,
-    })
+    });
 
-// Chart update function with condition, it destroys and rerender with line or bar depending on the button clicked
+// Chart update function, destroys and re-render with line or bar depending on the selected option
 
-function chartType(type){
-  myChart.destroy();
-  if(type === 'line') {
-  myChart = new Chart(ctx, {
-    type: 'line',
-    data: myData, 
-    options: myOptions,
-    })
-  } else {
+function updateChartType() {
+    myChart.destroy();
     myChart = new Chart(ctx, {
-        type: 'bar',
-        data: myData, 
+        type: document.getElementById("chartType").value,
+        data: myData,
         options: myOptions,
-        })
-  }}
+    });
+}

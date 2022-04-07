@@ -24,8 +24,11 @@
                         <h4>Activity</h4>
                     </div>
                     <div class="flex">
-                        <button onclick="chartType('bar')"><p class="btn">Bar</p></button>
-                        <button onclick="chartType('line')"><p class="ml btn">Line</p></button>
+                       <select name="chartType" id="chartType" onchange="updateChartType()">
+                            <option value="line">Line</option>
+                            <option value="bar">Bar</option>
+                            <option value="doughnut">Doughnut</option>
+                        </select>
                     </div>
                 </div>
                     <p>Today</p>
