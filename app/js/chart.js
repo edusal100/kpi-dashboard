@@ -1,11 +1,11 @@
 
-//chart data
-let config = {
+//chart data object
+const config = {
     type: "line",
     data: {
-        labels: ['10:00', '12:00', '14:00', '16:00', '18:00'],
+        labels: ['10:00','12:00', '14:00','16:00','18:00'],
         datasets: [{
-            data: [9, 10, 3, 19, 12],
+            data: [12, 19, 3, 5, 2, 3],
             borderColor: '#7FFFD4',
             backgroundColor:'#7FFFD4',
             fill: false,
@@ -25,7 +25,7 @@ scales: {
     xAxes: [{
         gridLines: {
             borderDash: [8,4],
-        }
+        },
     }] }
     }
 };

@@ -60,15 +60,10 @@ body .main_container {
   height: 100vh;
 }
 
-body .container {
-  margin-top: 1rem;
-  padding-left: 3rem;
-  padding-right: 3rem;
-}
-
 body .white_box {
   background: #ffffff;
   padding: 1.2rem;
+  border-radius: .5rem;
 }
 
 body .mb {
