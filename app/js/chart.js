@@ -2,10 +2,10 @@
 // Data structure for Day, Week and Month
 
 const day = [ 
-    {x: Date.parse('2022-04-04 00:00:00') , y:18},
-    {x: Date.parse('2022-04-05 00:00:00'), y:12},
-    {x: Date.parse('2022-04-06 00:00:00') , y:9},
-    {x: Date.parse('2022-04-07 00:00:00'), y:7},
+    {x: Date.parse('2022-04-04 00:00:00') , y:1},
+    {x: Date.parse('2022-04-05 00:00:00'), y:8},
+    {x: Date.parse('2022-04-06 00:00:00') , y:2},
+    {x: Date.parse('2022-04-07 00:00:00'), y:10},
     {x: Date.parse('2022-04-08 00:00:00') , y:12},
 
 ];
@@ -34,38 +34,39 @@ const config = {
     type: "line",
     data: {
         datasets: [{
-            label: 'Weekly Sales',
             data: day,
             borderColor: '#7FFFD4',
             backgroundColor:'#7FFFD4',
             fill: false,
 }]},
  options: {
-    tension: 0.3, 
-    legend: {
-    display: false,
-},
+    tension: 0.4,
+    plugins: {
+        legend: {
+        display: false,
+    },
+},     
 scales: {
     x: {
+        grid:{
+            borderDash: [8,4]
+        },
         type: 'time',
         time: {
             unit:'day',
         }
     },
-      yAxes: [{
-        gridLines: {
+      y: {
+        grid: {
             display: false,
         },
         ticks: {
             display:false,
-        }   
-    }],
-    xAxes: [{
-        gridLines: {
-            borderDash: [8,4],
         },
-    }] }
+        beginAtZero: true,   
     }
+    }
+}
 };
 
 
@@ -85,3 +86,5 @@ function changeChart(chartType) {
     myChart = new Chart(ctx,config);
 
 }
+
+function timeFrame()
