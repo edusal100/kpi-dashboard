@@ -85,6 +85,22 @@ function changeChart(chartType) {
     config.type = chartType.value;
     myChart = new Chart(ctx,config);
 
-}
+};
 
-function timeFrame()
+// Period time update function: daily, weekly and monthly
+
+function timeFrame(period){
+    console.log(period.value);
+    if(period.value == 'day'){
+        config.options.scales.x.time.unit = period.value;
+        config.data.datasets[0].data = day;
+    } if(period.value == 'week'){
+        config.options.scales.x.time.unit = period.value;
+        config.data.datasets[0].data = week;
+    }
+    if(period.value == 'month'){
+        config.options.scales.x.time.unit = period.value;
+        config.data.datasets[0].data = month;
+    }
+    myChart.update();
+}
