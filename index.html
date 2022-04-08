@@ -24,10 +24,9 @@
                         <h4>Activity</h4>
                     </div>
                     <div class="flex">
-                       <select name="chartType" id="chartType" onchange="updateChartType()">
+                       <select name="chartType" id="chartType" onchange = changeChart(this)>
                             <option value="line">Line</option>
                             <option value="bar">Bar</option>
-                            <option value="doughnut">Doughnut</option>
                         </select>
                     </div>
                 </div>
@@ -36,7 +35,7 @@
                         <h2>5 789</h2>
                         <p class="steps ml">steps</p>
                     </div>
-                <div>
+                <div id="graph-container">
                     <canvas id="myChart"></canvas>
                 </div>
          </div>
