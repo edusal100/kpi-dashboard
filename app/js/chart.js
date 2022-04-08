@@ -1,20 +1,58 @@
 
+// Data structure for Day, Week and Month
+
+const day = [ 
+    {x: Date.parse('2022-04-04 00:00:00') , y:18},
+    {x: Date.parse('2022-04-05 00:00:00'), y:12},
+    {x: Date.parse('2022-04-06 00:00:00') , y:9},
+    {x: Date.parse('2022-04-07 00:00:00'), y:7},
+    {x: Date.parse('2022-04-08 00:00:00') , y:12},
+
+];
+
+const week = [
+    {x: Date.parse('2022-04-04 00:00:00'), y:50},
+    {x: Date.parse('2022-04-11 00:00:00'), y:70},
+    {x: Date.parse('2022-04-18 00:00:00'), y:100},
+    {x: Date.parse('2022-04-25 00:00:00'), y:60},
+    {x: Date.parse('2022-05-02 00:00:00'), y:30},
+];
+
+const month = [
+    {x: Date.parse('2022-01-01 00:00:00'), y:500},
+    {x: Date.parse('2022-02-01 00:00:00'), y:700},
+    {x: Date.parse('2022-03-01 00:00:00'), y:500},
+    {x: Date.parse('2022-04-01 00:00:00'), y:300},
+    {x: Date.parse('2022-05-01 00:00:00'), y:700},
+];
+
+console.log (day);
+
 //chart data object
+
 const config = {
     type: "line",
     data: {
-        labels: ['10:00','12:00', '14:00','16:00','18:00'],
         datasets: [{
-            data: [12, 19, 3, 5, 2, 3],
+            label: 'Weekly Sales',
+            data: day,
             borderColor: '#7FFFD4',
             backgroundColor:'#7FFFD4',
             fill: false,
 }]},
- options: { legend: {
+ options: {
+    tension: 0.3, 
+    legend: {
     display: false,
 },
 scales: {
-    yAxes: [{
+    x: {
+        type: 'time',
+        time: {
+            unit:'day',
+        }
+    },
+      yAxes: [{
         gridLines: {
             display: false,
         },
@@ -29,6 +67,7 @@ scales: {
     }] }
     }
 };
+
 
 
 //Default initialization of chart with type: line
