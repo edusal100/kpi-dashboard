@@ -35,8 +35,8 @@ const config = {
     data: {
         datasets: [{
             data: day,
-            borderColor: '#7FFFD4',
-            backgroundColor:'#7FFFD4',
+            borderColor: '#5a4aa6',
+            backgroundColor:'#5a4aa6',
             fill: false,
 }]},
  options: {
@@ -49,7 +49,7 @@ const config = {
 scales: {
     x: {
         grid:{
-            borderDash: [8,4]
+            display: false,
         },
         type: 'time',
         time: {

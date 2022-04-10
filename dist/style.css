@@ -54,14 +54,15 @@
 body {
   background: #f7f8fa;
   font-family: 'Red Hat Display', sans-serif;
+  color: #ffffff;
 }
 
 body .main_container {
   height: 100vh;
 }
 
-body .white_box {
-  background: #ffffff;
+body .dark_box {
+  background: #202229;
   padding: 1.2rem;
   border-radius: .5rem;
 }

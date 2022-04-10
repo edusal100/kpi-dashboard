@@ -31,13 +31,14 @@
 body {
     background: $mediumGray;
     font-family: 'Red Hat Display', sans-serif;
+    color: $white;
 
     .main_container{
         height: 100vh;
     }
 
-    .white_box {
-        background: $white;
+    .dark_box {
+        background: $darkgray;
         padding: 1.2rem;
         border-radius: .5rem;
     }
