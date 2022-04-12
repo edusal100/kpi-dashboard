@@ -87,10 +87,9 @@ scales: {
 };
 
 
-
 //Default initialization of chart with type: line
 
-const ctx = document.getElementById('myChart');
+const ctx = document.querySelector("#myChart");
 let myChart = new Chart(ctx,config);
     
 
