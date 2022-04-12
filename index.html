@@ -24,9 +24,9 @@
                     <div>
                         <h4>Summary</h4>
                     </div>
-                    <button onclick = timeFrame(this) value="day">Day</button>
-                    <button onclick = timeFrame(this) value="week">Week</button>
-                    <button onclick = timeFrame(this) value="month">Month</button>
+                    <button onclick = timeFrame(this) value="day">d</button>
+                    <button onclick = timeFrame(this) value="week">w</button>
+                    <button onclick = timeFrame(this) value="month">m</button>
                     <div class="flex">
                        <select name="chartType" id="chartType" onchange = changeChart(this)>
                             <option value="line">Line</option>
@@ -34,11 +34,6 @@
                         </select>
                     </div>
                 </div>
-                    <p>Today</p>
-                    <div class="mb flex flex-ai-end">
-                        <h2>5 789</h2>
-                        <p class="steps ml">steps</p>
-                    </div>
                 <div id="graph-container">
                     <canvas id="myChart"></canvas>
                 </div>

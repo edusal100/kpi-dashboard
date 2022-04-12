@@ -45,23 +45,30 @@ const config = {
         legend: {
         display: false,
     },
-},     
+},
+layout: {
+    padding: {
+        top: 30,
+    }
+},   
 scales: {
     x: {
         grid:{
             display: false,
+            borderColor: '#202229',
         },
         type: 'time',
         time: {
             unit:'day',
+        },
+        ticks: {
+            display: false,
         }
     },
       y: {
         grid: {
             display: false,
-        },
-        ticks: {
-            display:false,
+            borderColor: '#202229',
         },
         beginAtZero: true,   
     }
