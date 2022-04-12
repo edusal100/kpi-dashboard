@@ -52,7 +52,7 @@
 }
 
 body {
-  background: #f7f8fa;
+  background: #ffffff;
   font-family: 'Red Hat Display', sans-serif;
   color: #ffffff;
 }
@@ -63,7 +63,7 @@ body .main_container {
 
 body .dark_box {
   background: #202229;
-  padding: 1.2rem;
+  padding: 1.8rem;
   border-radius: .5rem;
 }
 
@@ -82,8 +82,8 @@ body h4 {
 
 body p {
   font-weight: 500;
-  font-size: 0.9rem;
-  color: gray;
+  font-size: 1.1rem;
+  color: #636469;
 }
 
 body h2 {
@@ -95,8 +95,7 @@ body .steps {
   margin-bottom: .4rem;
 }
 
-body .btn {
-  border: solid 1px gray;
-  border-radius: 5px;
-  padding: 0.2rem 0.5rem;
+body button {
+  background: transparent;
+  border-color: transparent;
 }

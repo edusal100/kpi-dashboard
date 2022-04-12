@@ -21,18 +21,14 @@
     <div class="main_container flex flex-jc-c flex-ai-c">
         <div class="dark_box">
                 <div class="mb flex flex-jc-sb">
+                    <h4>Subscribers</h4>
                     <div>
-                        <h4>Summary</h4>
-                    </div>
-                    <button onclick = timeFrame(this) value="day">d</button>
-                    <button onclick = timeFrame(this) value="week">w</button>
-                    <button onclick = timeFrame(this) value="month">m</button>
-                    <div class="flex">
-                       <select name="chartType" id="chartType" onchange = changeChart(this)>
-                            <option value="line">Line</option>
-                            <option value="bar">Bar</option>
-                        </select>
-                    </div>
+                        <button onclick = timeFrame(this) value="day"><p>d</p></button>
+                        <button class="ml" onclick = timeFrame(this) value="week"><p>w</p></button>
+                        <button class="ml" onclick = timeFrame(this) value="month"><p>m</p></button>
+                        <button class="ml" onclick = timeFrame(this) value=""><p>6m</p></button>
+                        <button class="ml" onclick = timeFrame(this) value=""><p>y</p></button>
+                    </div>    
                 </div>
                 <div id="graph-container">
                     <canvas id="myChart"></canvas>

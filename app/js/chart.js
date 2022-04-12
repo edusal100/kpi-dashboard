@@ -3,10 +3,12 @@
 
 const day = [ 
     {x: Date.parse('2022-04-04 00:00:00') , y:1},
-    {x: Date.parse('2022-04-05 00:00:00'), y:8},
-    {x: Date.parse('2022-04-06 00:00:00') , y:2},
-    {x: Date.parse('2022-04-07 00:00:00'), y:10},
-    {x: Date.parse('2022-04-08 00:00:00') , y:12},
+    {x: Date.parse('2022-04-05 00:00:00'), y:5},
+    {x: Date.parse('2022-04-06 00:00:00') , y:3},
+    {x: Date.parse('2022-04-07 00:00:00'), y:8},
+    {x: Date.parse('2022-04-08 00:00:00') , y:4},
+    {x: Date.parse('2022-04-09 00:00:00') , y:19},
+    {x: Date.parse('2022-04-10 00:00:00') , y:15},
 
 ];
 
@@ -49,6 +51,7 @@ const config = {
 layout: {
     padding: {
         top: 30,
+        bottom: 30,
     }
 },   
 scales: {
@@ -66,6 +69,13 @@ scales: {
         }
     },
       y: {
+        ticks: {
+            maxTicksLimit: 3,
+            font:{
+                size: 16,
+            }
+        },
+
         grid: {
             display: false,
             borderColor: '#202229',

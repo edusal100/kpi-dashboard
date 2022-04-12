@@ -29,7 +29,7 @@
 }
 
 body {
-    background: $mediumGray;
+    background: $white;
     font-family: 'Red Hat Display', sans-serif;
     color: $white;
 
@@ -39,7 +39,7 @@ body {
 
     .dark_box {
         background: $darkgray;
-        padding: 1.2rem;
+        padding: 1.8rem;
         border-radius: .5rem;
     }
     .mb {
@@ -55,8 +55,8 @@ body {
     }
     p{
         font-weight: 500;
-        font-size: 0.9rem;
-        color: gray;
+        font-size: 1.1rem;
+        color: $lightGray;
     }
     h2 {
         font-weight: 700;
@@ -65,10 +65,9 @@ body {
     .steps {
         margin-bottom: .4rem;
     }
-    .btn {
-        border: solid 1px gray;
-        border-radius: 5px;
-        padding: 0.2rem 0.5rem;
+    button {
+        background: transparent;
+        border-color: transparent;
     }
 
 }
