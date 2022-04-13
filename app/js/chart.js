@@ -10,7 +10,7 @@ const data = {
         label: "Africa",
         borderColor: "#3e95cd",
         fill: true,
-        backgroundColor: "rgb(62,149,205,0.1)",
+        backgroundColor: "rgb(62,149,205,0.05)",
         pointRadius: 0,
     }, {
         data: [282,350,411,502,635,980,940,850,1000,1500,2000,2400],
