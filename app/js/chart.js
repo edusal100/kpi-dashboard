@@ -1,90 +1,24 @@
 
 // Data structure for Day, Week and Month
 
-const day = [ 
-    {x: Date.parse('2022-04-04 00:00:00') , y:1},
-    {x: Date.parse('2022-04-05 00:00:00'), y:5},
-    {x: Date.parse('2022-04-06 00:00:00') , y:3},
-    {x: Date.parse('2022-04-07 00:00:00'), y:8},
-    {x: Date.parse('2022-04-08 00:00:00') , y:4},
-    {x: Date.parse('2022-04-09 00:00:00') , y:19},
-    {x: Date.parse('2022-04-10 00:00:00') , y:15},
+const labels = [1500,1600,1700,1750,1800,1850,1900,1950,1999,2050]
 
-];
-
-const week = [
-    {x: Date.parse('2022-04-04 00:00:00'), y:50},
-    {x: Date.parse('2022-04-11 00:00:00'), y:70},
-    {x: Date.parse('2022-04-18 00:00:00'), y:100},
-    {x: Date.parse('2022-04-25 00:00:00'), y:60},
-    {x: Date.parse('2022-05-02 00:00:00'), y:30},
-];
-
-const month = [
-    {x: Date.parse('2022-01-01 00:00:00'), y:500},
-    {x: Date.parse('2022-02-01 00:00:00'), y:700},
-    {x: Date.parse('2022-03-01 00:00:00'), y:500},
-    {x: Date.parse('2022-04-01 00:00:00'), y:300},
-    {x: Date.parse('2022-05-01 00:00:00'), y:700},
-];
-
-console.log (day);
+const data = {
+    labels,
+    datasets: [{
+        data: [86,114,106,106,107,111,133,221,783,2478],
+        label: "Africa",
+        borderColor: "#3e95cd",
+    }]
+}
 
 //chart data object
 
 const config = {
     type: "line",
-    data: {
-        datasets: [{
-            data: day,
-            borderColor: '#5a4aa6',
-            backgroundColor:'#5a4aa6',
-            fill: false,
-}]},
- options: {
-    tension: 0.4,
-    plugins: {
-        legend: {
-        display: false,
-    },
-},
-layout: {
-    padding: {
-        top: 30,
-        bottom: 30,
-    }
-},   
-scales: {
-    x: {
-        grid:{
-            display: false,
-            borderColor: '#202229',
-        },
-        type: 'time',
-        time: {
-            unit:'day',
-        },
-        ticks: {
-            display: false,
-        }
-    },
-      y: {
-        ticks: {
-            maxTicksLimit: 3,
-            font:{
-                size: 16,
-            }
-        },
-
-        grid: {
-            display: false,
-            borderColor: '#202229',
-        },
-        beginAtZero: true,   
-    }
-    }
+    data: data,
 }
-};
+
 
 
 //Default initialization of chart with type: line
