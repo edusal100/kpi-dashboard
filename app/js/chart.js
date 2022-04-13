@@ -8,14 +8,14 @@ const data = {
     datasets: [{
         data: [900,820,910,850,960,610,600,2500,2200,2600,2300,3000],
         label: "Africa",
-        borderColor: "#3e95cd",
+        borderColor: "#2d8dfe",
         fill: true,
         backgroundColor: "rgb(62,149,205,0.05)",
         pointRadius: 0,
     }, {
         data: [282,350,411,502,635,980,940,850,1000,1500,2000,2400],
         label: "Asia",
-        borderColor: "#3e95cd",
+        borderColor: "#2d8dfe",
         borderDash: [6,6],
         pointRadius: 0,
     }

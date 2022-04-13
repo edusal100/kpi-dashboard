@@ -26,21 +26,24 @@
     &-ai-sb{
         align-items: space-between;
     }
+    &-self-end {
+        align-self:flex-end;
+    }
 }
 
 body {
-    background: $white;
+    background: $lightGray;
     font-family: 'Red Hat Display', sans-serif;
-    color: $white;
+    color: $darkgray;
 
     .main_container{
         height: 100vh;
     }
 
-    .dark_box {
-        background: $darkgray;
+    .white_box {
+        background: $white;
         padding: 1.8rem;
-        border-radius: .5rem;
+        border-radius: .3rem;
     }
     .mb {
         margin-bottom: 1rem;
@@ -49,25 +52,35 @@ body {
         margin-left: 0.5rem;
     }
 
+    .green {
+        color: $green;
+    }
+
+    .arrow {
+        width: 0.55rem;
+    }
+
+    .dash {
+        border: dashed;
+        border-width: 0.5px;
+    }
+
+    .blue {
+        color: $blue;
+    }
+
     h4{
         font-weight: 500;
         font-size: 1.1rem;
     }
     p{
         font-weight: 500;
-        font-size: 1.1rem;
+        font-size: 0.75rem;
         color: $lightGray;
     }
     h2 {
         font-weight: 700;
         font-size: 2.1rem;
-    }
-    .steps {
-        margin-bottom: .4rem;
-    }
-    button {
-        background: transparent;
-        border-color: transparent;
     }
 
 }

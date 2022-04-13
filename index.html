@@ -18,17 +18,28 @@
 <body>
 
     <div class="main_container flex flex-jc-c flex-ai-c">
-        <div class="dark_box">
-                <div class="mb flex flex-jc-sb">
-                    <h4>Subscribers</h4>
-                    <div>
-                        <button onclick = timeFrame(this) value="day"><p>d</p></button>
-                        <button class="ml" onclick = timeFrame(this) value="week"><p>w</p></button>
-                        <button class="ml" onclick = timeFrame(this) value="month"><p>m</p></button>
-                        <button class="ml" onclick = timeFrame(this) value=""><p>6m</p></button>
-                        <button class="ml" onclick = timeFrame(this) value=""><p>y</p></button>
+        <div class="white_box">
+                <div>
+                    <p>PROFIT IN 2022</p>
+                        <div class="flex flex-jc-sb">
+                            <h1>US$ 153,489</h1>
+                            <div class="flex-self-end">
+                                <p>2021</p>
+                                <hr class="dash blue">
+                            </div>
+                            <div class="flex-self-end">
+                                <p>2022</p>
+                                <hr class="blue">
+                            </div>
+                        </div>
+                    
+                    <div class="flex">
+                        <img class="arrow" src="/images/arrow_green.svg" alt="">
+                        <h4 class="ml green">32,85%</h4>
+                        <p class="flex-self-end ml">vs last year</p>
                     </div>    
                 </div>
+
                 <div id="graph-container">
                     <canvas id="myChart"></canvas>
                 </div>
