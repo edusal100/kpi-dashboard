@@ -119,6 +119,8 @@ selectElement.addEventListener('change', (event) => {
         }
         data.datasets[0].data = randomArrayMonth1;
         data.datasets[1].data = randomArrayMonth2;
+        data.datasets[0].label = currentMonth;
+        data.datasets[1].label = previousMonth;
         document.querySelector('#current').innerHTML = currentMonth;
         document.querySelector('#previous').innerHTML = previousMonth;
         
@@ -126,6 +128,8 @@ selectElement.addEventListener('change', (event) => {
     } else {
         data.datasets[0].data = randomArrayMonth1;
         data.datasets[1].data = randomArrayMonth2;
+        data.datasets[0].label = currentMonth;
+        data.datasets[1].label = previousMonth;
         document.querySelector('#current').innerHTML = currentMonth;
         document.querySelector('#previous').innerHTML = previousMonth;
     }   
@@ -141,12 +145,16 @@ selectElement.addEventListener('change', (event) => {
         }
         data.datasets[0].data = randomArrayWeek1;
         data.datasets[1].data = randomArrayWeek2;
+        data.datasets[0].label = weekNumber;
+        data.datasets[1].label = previousWeekNumber;
         document.querySelector('#current').innerHTML = "W: " + weekNumber;
         document.querySelector('#previous').innerHTML = "W: " + previousWeekNumber;
 
     } else {
         data.datasets[0].data = randomArrayWeek1;
         data.datasets[1].data = randomArrayWeek2;
+        data.datasets[0].label = weekNumber;
+        data.datasets[1].label = previousWeekNumber;
         document.querySelector('#current').innerHTML = "W: " + weekNumber;
         document.querySelector('#previous').innerHTML = "W: " + previousWeekNumber;
     }
@@ -163,12 +171,16 @@ selectElement.addEventListener('change', (event) => {
         }
         data.datasets[0].data = randomArrayYear1;
         data.datasets[1].data = randomArrayYear2;
+        data.datasets[0].label = currentYear;
+        data.datasets[1].label = previousYear;
         document.querySelector('#current').innerHTML = currentYear;
         document.querySelector('#previous').innerHTML = previousYear;
 
         } else {
             data.datasets[0].data = randomArrayYear1;
             data.datasets[1].data = randomArrayYear2;
+            data.datasets[0].label = currentYear;
+            data.datasets[1].label = previousYear;
             document.querySelector('#current').innerHTML = currentYear;
             document.querySelector('#previous').innerHTML = previousYear;
 
