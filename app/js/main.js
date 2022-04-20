@@ -1,11 +1,13 @@
 
-// Data structure for Day, Week and Month
+// Starting data structure for Day, Week and Month
 
 const labels = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 const data1 = [900,820,910,850,960,610,600,2500,2200,2600,2300,3000]
 const data2 = [282,350,411,502,635,980,940,850,1000,1500,2000,2400]
 
 // Random arrays for week and month, using array push and mathfloor plus conditional
+
+// Starting empty arrays so those could be created when option selected at first
 
 let array_length;
 const monthLabel = [];
@@ -94,6 +96,10 @@ currentDate = new Date();
 const weekNumber = Math.ceil((currentDate.getDay() + 1 + days) / 7);
 const previousWeekNumber = Math.ceil((currentDate.getDay() + 1 + days) / 7)-1;
 
+//function to get the total days for a month
+function getDaysInMonth(year, month) {
+    return new Date(year, month, 0).getDate();
+  }
 
 
 // Period time update function: week, month and year with conditionals, array push for loops and event listener
@@ -112,6 +118,7 @@ selectElement.addEventListener('change', (event) => {
 
         if(randomArrayMonth1.length === 0 ){
         array_length = 30;
+        
 
         for(let i=0; i<array_length; i++) {
             randomArrayMonth1.push(getRndInteger(100,600));
@@ -139,22 +146,23 @@ selectElement.addEventListener('change', (event) => {
         if(randomArrayWeek1.length === 0 ){
         array_length = 12;
 
-        for(let i=0; i<array_length; i++) {
+        for(let i=1; i<array_length; i++) {
             randomArrayWeek1.push(getRndInteger(10,150));
             randomArrayWeek2.push(getRndInteger(10,150));
+
         }
         data.datasets[0].data = randomArrayWeek1;
         data.datasets[1].data = randomArrayWeek2;
-        data.datasets[0].label = weekNumber;
-        data.datasets[1].label = previousWeekNumber;
+        data.datasets[0].label = "W " + weekNumber;
+        data.datasets[1].label = "W " + previousWeekNumber;
         document.querySelector('#current').innerHTML = "W: " + weekNumber;
         document.querySelector('#previous').innerHTML = "W: " + previousWeekNumber;
 
     } else {
         data.datasets[0].data = randomArrayWeek1;
         data.datasets[1].data = randomArrayWeek2;
-        data.datasets[0].label = weekNumber;
-        data.datasets[1].label = previousWeekNumber;
+        data.datasets[0].label = "W " + weekNumber;
+        data.datasets[1].label = "W " + previousWeekNumber;
         document.querySelector('#current').innerHTML = "W: " + weekNumber;
         document.querySelector('#previous').innerHTML = "W: " + previousWeekNumber;
     }
@@ -188,3 +196,5 @@ selectElement.addEventListener('change', (event) => {
 }
         myChart.update();
 })
+
+// Splash startup screen

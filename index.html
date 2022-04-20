@@ -17,7 +17,24 @@
 </head> 
 <body>
 
-    <div class="main_container flex flex-jc-c flex-ai-c">
+
+
+<div class="main_container flex flex-column flex-jc-c flex-ai-c">
+
+        <div id="splashScreen" class="flex flex-jc-c flex-ai-c">
+        <div class="flex flex-jc-sb flex-ai-c white_box mb">
+            <div>
+                <h2>Welcome!</h2>
+                <p class="mb">This is a KPI Dashboard</p>
+                <a class="button" href="http://">New User</a>
+            </div>
+            <img class= "welcome" src="/images/welcome.png" alt="welcome">
+            
+        </div>
+    </div>
+
+
+    <div id="dashboard" class="flex flex-jc-c flex-ai-c">
         <div class="white_box">
                 <div>
                     <div class="flex flex-jc-sb">
@@ -54,8 +71,9 @@
          </div>
     
     </div>
+</div>
 
-    <script src="app/js/chart.js"></script>
+    <script src="app/js/main.js"></script>
 
 </body>
 </html>

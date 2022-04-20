@@ -38,6 +38,7 @@ body {
 
     .main_container{
         height: 100vh;
+        padding: 1rem;
     }
 
     .white_box {
@@ -82,6 +83,21 @@ body {
     h2 {
         font-weight: 700;
         font-size: 2.1rem;
+    }
+    .welcome {
+        width: 9.5rem;
+    }
+    .button  {
+        text-decoration: none;
+        background: $darkgray;
+        color: $white;
+        padding: .5rem 1rem;
+        border-radius: .3rem;
+        
+    }
+
+    #dashboard {
+        display: block;
     }
 
 }
