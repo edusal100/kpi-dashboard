@@ -197,4 +197,35 @@ selectElement.addEventListener('change', (event) => {
         myChart.update();
 })
 
-// Splash startup screen
+function abrirMenu (menu){
+    if (menu == "loginScreen") {
+        document.querySelector("#welcomeScreen").style.display = "none";
+        document.querySelector("#loginScreen").style.display = "block";
+    } else if (menu == "signUpScreen"){
+        document.querySelector("#welcomeScreen").style.display = "none";
+        document.querySelector("#signUpScreen").style.display = "block";
+    }
+    
+}
+
+document.querySelector("#login").addEventListener("click", () => abrirMenu("loginScreen"))
+document.querySelector("#newUser").addEventListener("click", () => abrirMenu("signUpScreen"))
+
+//create newUser
+
+const arrayUsers = []
+
+document.querySelector("#signUp").addEventListener("click", () => newUser );
+
+function newUser {
+    const name = document.querySelector(#name).value;
+    const email = document.querySelector(#email).value;
+    const password = document.querySelector(#password).value;
+
+    const user = new User (name, email, password);
+
+    arrayUsers.push(user);
+
+    localStorage.setItem("arrayUsers", JSON.stringify(arrayUsers));
+
+}

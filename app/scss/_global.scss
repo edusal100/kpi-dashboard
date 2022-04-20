@@ -103,11 +103,25 @@ body {
         color: $white;
         padding: .5rem 1rem;
         border-radius: .3rem;
+        cursor: pointer;
         
     }
-
-    #dashboard {
-        display: none;
+    .button2  {
+        text-decoration: none;
+        background: $blue;
+        color: $white;
+        padding: .5rem 1rem;
+        border-radius: .3rem;
+        cursor: pointer;
+        
     }
+.input {
+    max-width: 15rem;
+    text-indent: .2rem;
+}
+
+#dashboard, #loginScreen, #signUpScreen {
+    display: none;
+}
 
 }

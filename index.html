@@ -21,20 +21,58 @@
 
 <div class="main_container flex flex-column flex-jc-c flex-ai-c">
 
+     <!-- Welcome Screen -->
         <div id="welcomeScreen" class="flex flex-jc-c flex-ai-c">
         <div class="flex flex-jc-sb flex-ai-c white_box mb flex-gap">
             <div class="flex flex-column">
                 <h2 class="mb">Hello, Welcome!</h2>
                 <h3>This is your all in one KPI Dashboard</h3>
-                <h3 class="mb">Let's start by creating your account</h3>
-                <a class="button flex-self-start" href="http://">Let's Start</a>
+                <h3 class="mb">Do you have an account?</h3>
+                <div class="flex">
+                    <a id="login" class="button flex-self-start">Login</a>
+                    <a id="newUser" class="button2 flex-self-start ml">New User</a>
+                </div>        
             </div>
-            <img class= "welcome" src="/images/welcome.png" alt="welcome">
-            
+            <img class= "welcome" src="/images/welcome.png" alt="welcome">       
+        </div>
+    </div>
+
+    <!-- Login Screen -->
+        <div id="loginScreen" class="flex flex-jc-c flex-ai-c">
+        <div class="flex flex-jc-sb flex-ai-c white_box mb flex-gap">
+            <div class="flex flex-column">
+                <h2>Welcome Back!</h2>
+                <h3 class="mb">Your data is waiting for you.</h3>
+                <input class="input mb" type="email" placeholder="email">
+                <input class="input mb" type="password" placeholder="password">
+                <div class="flex">
+                    <a id="signIn" class="button2 flex-self-start">Sign In</a>
+                </div>        
+            </div>
+            <img class= "welcome" src="/images/welcome.png" alt="welcome">       
+        </div>
+    </div>
+
+    <!-- Sign up Screen -->
+    <div id="signUpScreen" class="flex flex-jc-c flex-ai-c">
+        <div class="flex flex-jc-sb flex-ai-c white_box mb flex-gap">
+            <div class="flex flex-column">
+                <h2 class="mb">Hello, Whats your name?</h2>
+                <input id="name" class="input mb" type="text" placeholder="name">
+                <input id="email" class="input mb" type="email" placeholder="email">
+                <input id="password" class="input mb" type="password" placeholder="password">
+                <div class="flex">
+                    <a id="signUp" class="button2 flex-self-start">Sign Up</a>
+                </div>        
+            </div>
+            <img class= "welcome" src="/images/welcome.png" alt="welcome">       
         </div>
     </div>
 
 
+
+  
+<!-- Dashboard -->
     <div id="dashboard" class="flex flex-jc-c flex-ai-c">
         <div class="white_box">
                 <div>
@@ -73,7 +111,7 @@
     
     </div>
 </div>
-
+    <script src="app/js/user.js"></script>
     <script src="app/js/main.js"></script>
 
 </body>

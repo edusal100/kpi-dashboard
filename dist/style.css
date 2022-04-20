@@ -138,8 +138,23 @@ body .button {
   color: #ffffff;
   padding: .5rem 1rem;
   border-radius: .3rem;
+  cursor: pointer;
 }
 
-body #dashboard {
+body .button2 {
+  text-decoration: none;
+  background: #2d8dfe;
+  color: #ffffff;
+  padding: .5rem 1rem;
+  border-radius: .3rem;
+  cursor: pointer;
+}
+
+body .input {
+  max-width: 15rem;
+  text-indent: .2rem;
+}
+
+body #dashboard, body #loginScreen, body #signUpScreen {
   display: none;
 }
