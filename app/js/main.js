@@ -204,8 +204,7 @@ function abrirMenu (menu){
     } else if (menu == "signUpScreen"){
         document.querySelector("#welcomeScreen").style.display = "none";
         document.querySelector("#signUpScreen").style.display = "block";
-    }
-    
+    }   
 }
 
 document.querySelector("#login").addEventListener("click", () => abrirMenu("loginScreen"))
@@ -215,17 +214,23 @@ document.querySelector("#newUser").addEventListener("click", () => abrirMenu("si
 
 const arrayUsers = []
 
-document.querySelector("#signUp").addEventListener("click", () => newUser );
+document.querySelector("#signUp").addEventListener("click", () => newUser() );
 
-function newUser {
-    const name = document.querySelector(#name).value;
-    const email = document.querySelector(#email).value;
-    const password = document.querySelector(#password).value;
+
+function newUser () {
+    const name = document.querySelector("#name").value;
+    const email = document.querySelector("#email").value;
+    const password = document.querySelector("#password").value;
 
     const user = new User (name, email, password);
 
+    //if all 3 inputs has something then we push to array and localstorage plus access to dashboard
+    if (name && email && password){
     arrayUsers.push(user);
-
     localStorage.setItem("arrayUsers", JSON.stringify(arrayUsers));
+
+    document.querySelector("#signUpScreen").style.display = "none";
+    document.querySelector("#dashboard").style.display = "block";
+    }
 
 }
