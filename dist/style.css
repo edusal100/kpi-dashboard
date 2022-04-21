@@ -153,6 +153,9 @@ body .button2 {
 body .input {
   max-width: 15rem;
   text-indent: .2rem;
+  border: 2px solid #8b8a8b;
+  border-radius: 4px;
+  height: 1.8rem;
 }
 
 body #dashboard, body #loginScreen, body #signUpScreen {

@@ -197,6 +197,8 @@ selectElement.addEventListener('change', (event) => {
         myChart.update();
 })
 
+//startScreen menu
+
 function abrirMenu (menu){
     if (menu == "loginScreen") {
         document.querySelector("#welcomeScreen").style.display = "none";
@@ -214,7 +216,7 @@ document.querySelector("#newUser").addEventListener("click", () => abrirMenu("si
 
 const arrayUsers = []
 
-document.querySelector("#signUp").addEventListener("click", () => newUser() );
+document.querySelector("#signUp").addEventListener("click", newUser);
 
 
 function newUser () {
