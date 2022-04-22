@@ -199,7 +199,7 @@ selectElement.addEventListener('change', (event) => {
 
 //startScreen menu
 
-function abrirMenu (menu){
+function openMenu (menu){
     if (menu == "loginScreen") {
         document.querySelector("#welcomeScreen").style.display = "none";
         document.querySelector("#loginScreen").style.display = "block";
@@ -209,30 +209,34 @@ function abrirMenu (menu){
     }   
 }
 
-document.querySelector("#login").addEventListener("click", () => abrirMenu("loginScreen"))
-document.querySelector("#newUser").addEventListener("click", () => abrirMenu("signUpScreen"))
+document.querySelector("#login").addEventListener("click", () => openMenu("loginScreen"))
+document.querySelector("#newUser").addEventListener("click", () => openMenu("signUpScreen"))
+
 
 //create newUser
 
-const arrayUsers = []
+const arrayUsers = [];
 
 document.querySelector("#signUp").addEventListener("click", newUser);
 
 
 function newUser () {
+    const existingUsers = JSON.parse(localStorage.getItem("allUsers"));
+    if(existingUsers == null) existingUsers = [];
+
     const name = document.querySelector("#name").value;
     const email = document.querySelector("#email").value;
     const password = document.querySelector("#password").value;
 
     const user = new User (name, email, password);
-
+    
     //if all 3 inputs has something then we push to array and localstorage plus access to dashboard
-    if (name && email && password){
+    if (name && email && password){  
     arrayUsers.push(user);
     localStorage.setItem("arrayUsers", JSON.stringify(arrayUsers));
+    existingUsers.push(user);
+    localStorage.setItem("allUsers", JSON.stringify(existingUsers))
 
-    document.querySelector("#signUpScreen").style.display = "none";
-    document.querySelector("#dashboard").style.display = "block";
     }
 
 }
