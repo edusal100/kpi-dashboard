@@ -131,6 +131,10 @@ body {
     color: $error;
 }
 
+#errorImg {
+    width: 1.5rem;
+}
+
 #dashboard, #loginScreen, #signUpScreen, #errorImg {
     display: none;
 }

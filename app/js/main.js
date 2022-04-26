@@ -258,12 +258,11 @@ function login () {
     const loginPassword = document.querySelector("#loginPassword").value;
 
     existingUsers = JSON.parse(localStorage.getItem("arrayUsers"));
-    console.log(loginEmail);
-    const found = existingUsers.find( element => element.email === loginEmail);
-    console.log(found);
-    if(existingUsers === null) {
-        alert("There isnt any user saved");
+
+    if(existingUsers == null) {
+        document.querySelector("#errorMsg").innerHTML = ("Please enter a valid email address"),document.querySelector("#errorImg").style.display = "block";
     } else {
+        const found = existingUsers.find( element => element.email === loginEmail);
         found ? (document.querySelector("#loginScreen").style.display = "none", document.querySelector("#dashboard").style.display = "block") : 
         document.querySelector("#errorMsg").innerHTML = ("Please enter a valid email address"),document.querySelector("#errorImg").style.display = "block";
     }
