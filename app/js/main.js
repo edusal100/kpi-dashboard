@@ -216,14 +216,14 @@ document.querySelector("#newUser").addEventListener("click", () => openMenu("sig
 //create newUser
 
 const arrayUsers = [];
+let existingUsers = [];
 
 document.querySelector("#signUp").addEventListener("click", newUser);
 
-
+//Function new User
 function newUser () {
-    const existingUsers = JSON.parse(localStorage.getItem("allUsers"));
-    if(existingUsers == null) existingUsers = [];
-
+    existingUsers = JSON.parse(localStorage.getItem("arrayUsers"));
+    
     const name = document.querySelector("#name").value;
     const email = document.querySelector("#email").value;
     const password = document.querySelector("#password").value;
@@ -231,12 +231,41 @@ function newUser () {
     const user = new User (name, email, password);
     
     //if all 3 inputs has something then we push to array and localstorage plus access to dashboard
-    if (name && email && password){  
-    arrayUsers.push(user);
-    localStorage.setItem("arrayUsers", JSON.stringify(arrayUsers));
-    existingUsers.push(user);
-    localStorage.setItem("allUsers", JSON.stringify(existingUsers))
+    if (name && email && password){ 
 
+    //if there isnt an existing user push the new user and save
+    if(existingUsers == null) {
+        arrayUsers.push(user);
+        localStorage.setItem("arrayUsers", JSON.stringify(arrayUsers));
+
+    //If actually there is an existing user already push that one first on the array then the new one and then save
+    } else {
+    arrayUsers.push(existingUsers);
+    arrayUsers.push(user);
+    
+    localStorage.setItem("arrayUsers", JSON.stringify(arrayUsers));
+     }
     }
+}
+
+document.querySelector("#signIn").addEventListener("click", login);
+
+
+//Function login (validate if the user exist and if both email and password match)
+function login () {
+    const loginEmail = document.querySelector("#loginEmail").value;
+    const loginPassword = document.querySelector("#loginPassword").value;
+
+    existingUsers = JSON.parse(localStorage.getItem("arrayUsers"));
+    console.log(loginEmail);
+    const found = existingUsers.find( element => element.email === loginEmail);
+    console.log(found);
+    if(existingUsers === null) {
+        alert("There isnt any user saved");
+    } else {
+        found !== null ? (document.querySelector("#loginScreen").style.display = "none", document.querySelector("#dashboard").style.display = "block") : 
+        alert("error");
+    }
+
 
 }
