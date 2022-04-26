@@ -59,6 +59,10 @@ body {
         margin-left: 0.5rem;
     }
 
+    .mt {
+        margin-top: 1rem;
+    }
+
     .green {
         color: $green;
     }
@@ -123,7 +127,11 @@ body {
     height: 1.8rem;
 }
 
-#dashboard, #loginScreen, #signUpScreen {
+.error {
+    color: $error;
+}
+
+#dashboard, #loginScreen, #signUpScreen, #errorImg {
     display: none;
 }
 

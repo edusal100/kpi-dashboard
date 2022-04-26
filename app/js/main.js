@@ -251,6 +251,7 @@ function newUser () {
 document.querySelector("#signIn").addEventListener("click", login);
 
 
+
 //Function login (validate if the user exist and if both email and password match)
 function login () {
     const loginEmail = document.querySelector("#loginEmail").value;
@@ -263,8 +264,8 @@ function login () {
     if(existingUsers === null) {
         alert("There isnt any user saved");
     } else {
-        found !== null ? (document.querySelector("#loginScreen").style.display = "none", document.querySelector("#dashboard").style.display = "block") : 
-        alert("error");
+        found ? (document.querySelector("#loginScreen").style.display = "none", document.querySelector("#dashboard").style.display = "block") : 
+        document.querySelector("#errorMsg").innerHTML = ("Please enter a valid email address"),document.querySelector("#errorImg").style.display = "block";
     }
 
 

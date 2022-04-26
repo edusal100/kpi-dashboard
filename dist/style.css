@@ -89,6 +89,10 @@ body .ml {
   margin-left: 0.5rem;
 }
 
+body .mt {
+  margin-top: 1rem;
+}
+
 body .green {
   color: #19b962;
 }
@@ -158,6 +162,10 @@ body .input {
   height: 1.8rem;
 }
 
-body #dashboard, body #loginScreen, body #signUpScreen {
+body .error {
+  color: #ef9400;
+}
+
+body #dashboard, body #loginScreen, body #signUpScreen, body #errorImg {
   display: none;
 }
