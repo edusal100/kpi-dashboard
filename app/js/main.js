@@ -237,7 +237,7 @@ function newUser () {
     if(existingUsers == null) {
         arrayUsers.push(user);
         localStorage.setItem("arrayUsers", JSON.stringify(arrayUsers));
-        document.querySelector("#dashboard").style.display = "block";
+        document.querySelector("#loginScreen").style.display = "block";
         document.querySelector("#signUpScreen").style.display = "none";
 
     //If actually there is an existing user already push that one first on the array then the new one and then save
@@ -246,7 +246,7 @@ function newUser () {
     arrayUsers.push(user);
     
     localStorage.setItem("arrayUsers", JSON.stringify(arrayUsers));
-    document.querySelector("#dashboard").style.display = "block";
+    document.querySelector("#loginScreen").style.display = "block";
     document.querySelector("#signUpScreen").style.display = "none";
      }
     }
