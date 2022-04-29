@@ -197,7 +197,7 @@ selectElement.addEventListener('change', (event) => {
         myChart.update();
 })
 
-//startScreen menu
+//Function Login & Signup menu
 
 function openMenu (menu){
     if (menu == "loginScreen") {
@@ -213,12 +213,13 @@ document.querySelector("#login").addEventListener("click", () => openMenu("login
 document.querySelector("#newUser").addEventListener("click", () => openMenu("signUpScreen"))
 
 
-//create newUser
+//New user globals
 
 const arrayUsers = [];
 let existingUsers = [];
 
 document.querySelector("#signUp").addEventListener("click", newUser);
+
 
 //Function new User
 function newUser () {
@@ -256,7 +257,7 @@ document.querySelector("#signIn").addEventListener("click", login);
 
 
 
-//Function login (validate if the user exist and if both email and password match)
+//Function Login (validate if the user exist and if both email and password match)
 function login () {
     const loginEmail = document.querySelector("#loginEmail").value;
     const loginPassword = document.querySelector("#loginPassword").value;
