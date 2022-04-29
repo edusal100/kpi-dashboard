@@ -260,11 +260,11 @@ function login () {
     existingUsers = JSON.parse(localStorage.getItem("arrayUsers"));
 
     if(existingUsers == null) {
-        document.querySelector("#errorMsg").innerHTML = ("Please enter a valid email address"),document.querySelector("#errorImg").style.display = "block";
+        document.querySelector("#errorMsg").innerHTML = ("Please enter a valid email and password"),document.querySelector("#errorImg").style.display = "block";
     } else {
         const found = existingUsers.find( e => e.email === loginEmail && e.password === loginPassword);
         found ? (document.querySelector("#loginScreen").style.display = "none", document.querySelector("#dashboard").style.display = "block") : 
-        document.querySelector("#errorMsg").innerHTML = ("Please enter a valid email address"),document.querySelector("#errorImg").style.display = "block";
+        document.querySelector("#errorMsg").innerHTML = ("Please enter a valid email and password"),document.querySelector("#errorImg").style.display = "block";
     }
 
 
