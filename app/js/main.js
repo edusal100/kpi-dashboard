@@ -210,8 +210,9 @@ document.querySelector("#newUser").addEventListener("click", () => openMenu("sig
 
 //New user globals
 
-const arrayUsers = [];
+let arrayUsers = [];
 let existingUsers = [];
+const newUsers = [];
 
 document.querySelector("#signUp").addEventListener("click", newUser);
 
@@ -236,10 +237,11 @@ function newUser () {
         document.querySelector("#loginScreen").style.display = "block";
         document.querySelector("#signUpScreen").style.display = "none";
 
-    //If actually there is an existing user already push that one first on the array then the new one and then save
+    //If there is an existing user already push that one first on the array then the new one and then save
     } else {
-    arrayUsers.push(existingUsers);
-    arrayUsers.push(user);
+    newUsers.push(user);
+    arrayUsers = existingUsers.concat(newUsers);
+
     
     localStorage.setItem("arrayUsers", JSON.stringify(arrayUsers));
     document.querySelector("#loginScreen").style.display = "block";
