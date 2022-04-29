@@ -262,7 +262,7 @@ function login () {
     if(existingUsers == null) {
         document.querySelector("#errorMsg").innerHTML = ("Please enter a valid email address"),document.querySelector("#errorImg").style.display = "block";
     } else {
-        const found = existingUsers.find( e => e.email === loginEmail);
+        const found = existingUsers.find( e => e.email === loginEmail && e.password === loginPassword);
         found ? (document.querySelector("#loginScreen").style.display = "none", document.querySelector("#dashboard").style.display = "block") : 
         document.querySelector("#errorMsg").innerHTML = ("Please enter a valid email address"),document.querySelector("#errorImg").style.display = "block";
     }
