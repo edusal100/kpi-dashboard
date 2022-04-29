@@ -238,6 +238,7 @@ function newUser () {
         document.querySelector("#signUpScreen").style.display = "none";
 
     //If there is an existing user already push that one first on the array then the new one and then save
+    //Added concat to merge existing user array with new user array
     } else {
     newUsers.push(user);
     arrayUsers = existingUsers.concat(newUsers);
