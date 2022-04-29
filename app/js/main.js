@@ -193,15 +193,10 @@ selectElement.addEventListener('change', (event) => {
 })
 
 //Function Login & Signup menu
-
+//Simplified function with ternary operator
 function openMenu (menu){
-    if (menu == "loginScreen") {
-        document.querySelector("#welcomeScreen").style.display = "none";
-        document.querySelector("#loginScreen").style.display = "block";
-    } else if (menu == "signUpScreen"){
-        document.querySelector("#welcomeScreen").style.display = "none";
-        document.querySelector("#signUpScreen").style.display = "block";
-    }   
+    menu == "loginScreen" ? (document.querySelector("#welcomeScreen").style.display = "none", document.querySelector("#loginScreen").style.display = "block") :
+        (document.querySelector("#welcomeScreen").style.display = "none", document.querySelector("#signUpScreen").style.display = "block") 
 }
 
 document.querySelector("#login").addEventListener("click", () => openMenu("loginScreen"))
@@ -248,6 +243,9 @@ function newUser () {
     document.querySelector("#loginScreen").style.display = "block";
     document.querySelector("#signUpScreen").style.display = "none";
      }
+    } else {
+        document.querySelector("#errorMsgSignup").innerHTML = ("Please enter complete data required");
+        document.querySelector("#errorImgSignup").style.display = "block";
     }
 }
 
@@ -263,11 +261,12 @@ function login () {
     existingUsers = JSON.parse(localStorage.getItem("arrayUsers"));
 
     if(existingUsers == null) {
-        document.querySelector("#errorMsg").innerHTML = ("Please enter a valid email and password"),document.querySelector("#errorImg").style.display = "block";
+        document.querySelector("#errorMsgLogin").innerHTML = ("Please enter a valid email and password"),document.querySelector("#errorImgLogin").style.display = "block";
     } else {
         const found = existingUsers.find( e => e.email === loginEmail && e.password === loginPassword);
+        //Simplified function with ternary operator
         found ? (document.querySelector("#loginScreen").style.display = "none", document.querySelector("#dashboard").style.display = "block") : 
-        document.querySelector("#errorMsg").innerHTML = ("Please enter a valid email and password"),document.querySelector("#errorImg").style.display = "block";
+        document.querySelector("#errorMsgLogin").innerHTML = ("Please enter a valid email and password"),document.querySelector("#errorImgLogin").style.display = "block";
     }
 
 

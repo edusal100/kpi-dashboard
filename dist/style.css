@@ -166,10 +166,10 @@ body .error {
   color: #ef9400;
 }
 
-body #errorImg {
+body #errorImgLogin, body #errorImgSignup {
   width: 1.5rem;
 }
 
-body #dashboard, body #loginScreen, body #signUpScreen, body #errorImg {
+body #dashboard, body #loginScreen, body #signUpScreen, body #errorImgLogin, body #errorImgSignup {
   display: none;
 }

@@ -131,11 +131,11 @@ body {
     color: $error;
 }
 
-#errorImg {
+#errorImgLogin, #errorImgSignup {
     width: 1.5rem;
 }
 
-#dashboard, #loginScreen, #signUpScreen, #errorImg {
+#dashboard, #loginScreen, #signUpScreen, #errorImgLogin, #errorImgSignup {
     display: none;
 }
 
