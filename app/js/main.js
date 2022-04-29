@@ -96,11 +96,6 @@ currentDate = new Date();
 const weekNumber = Math.ceil((currentDate.getDay() + 1 + days) / 7);
 const previousWeekNumber = Math.ceil((currentDate.getDay() + 1 + days) / 7)-1;
 
-//function to get the total days for a month
-function getDaysInMonth(year, month) {
-    return new Date(year, month, 0).getDate();
-  }
-
 
 // Period time update function: week, month and year with conditionals, array push for loops and event listener
 //Added an extra conditional to confirm if already have data or not to avoid keep pushing more to the array and use the alredy randonmly created data instead
