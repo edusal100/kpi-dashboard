@@ -271,3 +271,5 @@ function login () {
 
 
 }
+
+//Function new dashboard item
