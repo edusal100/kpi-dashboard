@@ -265,7 +265,7 @@ function login () {
     } else {
         const found = existingUsers.find( e => e.email === loginEmail && e.password === loginPassword);
         //Simplified function with ternary operator
-        found ? (document.querySelector("#loginScreen").style.display = "none", document.querySelector("#dashboard").style.display = "block") : 
+        found ? (document.querySelector("#loginScreen").style.display = "none", document.querySelector(".dashboard").style.display = "block") : 
         document.querySelector("#errorMsgLogin").innerHTML = ("Please enter a valid email and password"),document.querySelector("#errorImgLogin").style.display = "block";
     }
 
