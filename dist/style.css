@@ -140,6 +140,11 @@ body h3 {
   color: #636469;
 }
 
+body h4 {
+  color: #636469;
+  font-size: .8rem;
+}
+
 body .welcome {
   height: 15rem;
 }
@@ -184,6 +189,20 @@ body label {
 
 body .error {
   color: #ef9400;
+}
+
+body .avatar {
+  width: 3rem;
+}
+
+body .avatar:hover {
+  border: solid 2px #1e88e5;
+  border-radius: 2rem;
+}
+
+body .avatar:active {
+  border: solid 2px #43a047;
+  border-radius: 2rem;
 }
 
 body #errorImgLogin, body #errorImgSignup {

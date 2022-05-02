@@ -104,6 +104,10 @@ body {
         font-size: 1rem;
         color: $lightGray;
     }
+    h4{
+        color: $lightGray;
+        font-size: .8rem;
+    }
     .welcome {
         height: 15rem;
     }
@@ -145,6 +149,18 @@ label {
 
 .error {
     color: $error;
+}
+
+.avatar {
+    width: 3rem;
+}
+.avatar:hover {
+    border: solid 2px #1e88e5;
+    border-radius: 2rem;
+}
+.avatar:active {
+    border: solid 2px #43a047;
+    border-radius: 2rem;
 }
 
 #errorImgLogin, #errorImgSignup {
