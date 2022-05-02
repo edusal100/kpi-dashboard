@@ -85,6 +85,14 @@ body .mb {
   margin-bottom: 1rem;
 }
 
+body .mb2 {
+  margin-bottom: 2rem;
+}
+
+body .mb05 {
+  margin-bottom: 0.5rem;
+}
+
 body .ml {
   margin-left: 0.5rem;
 }
@@ -123,7 +131,7 @@ body p {
 
 body h2 {
   font-weight: 700;
-  font-size: 2.1rem;
+  font-size: 1.5rem;
 }
 
 body h3 {
@@ -133,7 +141,7 @@ body h3 {
 }
 
 body .welcome {
-  width: 9.5rem;
+  height: 15rem;
 }
 
 body .button {
@@ -156,10 +164,22 @@ body .button2 {
 
 body .input {
   max-width: 15rem;
-  text-indent: .2rem;
-  border: 2px solid #8b8a8b;
-  border-radius: 4px;
   height: 1.8rem;
+  border: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: #f5f5f2;
+  padding: .3rem .8rem;
+  border-radius: .3rem;
+  outline: none;
+  color: #636469;
+}
+
+body label {
+  color: #636469;
+  font-size: .8rem;
+  margin-bottom: .3rem;
 }
 
 body .error {

@@ -13,7 +13,7 @@
 
     <link rel="stylesheet" href="/dist/style.css">
 
-    <title>KPI Dashboard</title>
+    <title>Ontime</title>
 </head> 
 <body>
 
@@ -25,9 +25,9 @@
         <div id="welcomeScreen" class="flex flex-jc-c flex-ai-c">
         <div class="flex flex-jc-sb flex-ai-c white_box mb flex-gap">
             <div class="flex flex-column">
-                <h2 class="mb">Hello, Welcome!</h2>
-                <h3>This is your all in one KPI Dashboard</h3>
-                <h3 class="mb">Already have an account?</h3>
+                <h2 class="mb">Welcome to Ontime</h2>
+                <h3>Unlock your team performance</h3>
+                <h3 class="mb2">Already have an account?</h3>
                 <div class="flex">
                     <a id="login" class="button flex-self-start">Login</a>
                     <a id="newUser" class="button2 flex-self-start ml">New User</a>
@@ -43,12 +43,14 @@
         <div class="flex flex-jc-sb flex-ai-c white_box mb flex-gap">
             <div class="flex flex-column">
                 <h2>Welcome Back!</h2>
-                <h3 class="mb">Login to your KPI Dasboard account.</h3>
-                <input id="loginEmail" class="input mb" type="email" placeholder="email">
-                <input id = "loginPassword" class="input mb" type="password" placeholder="password">
+                <h3 class="mb">Login to your Ontime account.</h3>
+                <label for="loginEmail">E-mail</label>
+                <input id="loginEmail" class="input mb05" type="email" placeholder="@mail.com">
+                <label for="loginPassword">Password</label>
+                <input id = "loginPassword" class="input" type="password" placeholder="Password">
                 <div class="flex flex-column">
-                    <div class="flex flex-ai-c">
-                        <img id = "errorImgLogin" src="/images/cerrar.png" alt="error msg">
+                    <div class="flex flex-ai-c mt">
+                        <img id = "errorImgLogin" src="/images/alert.png" alt="error msg">
                         <p id="errorMsgLogin" class="error ml"></p>
                     </div>
                     <a id="signIn" class="button2 flex-self-start mt">Sign In</a> 
@@ -63,13 +65,16 @@
     <div id="signUpScreen" class="flex flex-jc-c flex-ai-c">
         <div class="flex flex-jc-sb flex-ai-c white_box mb flex-gap">
             <div class="flex flex-column">
-                <h2 class="mb">Hello, Whats your name?</h2>
-                <input id="name" class="input mb" type="text" placeholder="name">
-                <input id="email" class="input mb" type="email" placeholder="email">
-                <input id="password" class="input mb" type="password" placeholder="password">
+                <h2 class="mb">Let's get you started</h2>
+                <label for="name">Name</label>
+                <input id="name" class="input mb05" type="text" placeholder="name">
+                <label for="email">E-mail</label>
+                <input id="email" class="input mb05" type="email" placeholder="email">
+                <label for="password">Password</label>
+                <input id="password" class="input mb05" type="password" placeholder="password">
                 <div class="flex flex-column">
                     <div class="flex flex-ai-c">
-                        <img id = "errorImgSignup" src="/images/cerrar.png" alt="error msg">
+                        <img id = "errorImgSignup" src="/images/alert.png" alt="error msg">
                         <p id="errorMsgSignup" class="error ml"></p>
                     </div>
                     <a id="signUp" class="button2 flex-self-start mt">Sign Up</a>

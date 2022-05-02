@@ -55,6 +55,12 @@ body {
     .mb {
         margin-bottom: 1rem;
     }
+    .mb2 {
+        margin-bottom: 2rem;
+    }
+    .mb05 {
+        margin-bottom: 0.5rem;
+    }
     .ml {
         margin-left: 0.5rem;
     }
@@ -91,7 +97,7 @@ body {
     }
     h2 {
         font-weight: 700;
-        font-size: 2.1rem;
+        font-size: 1.5rem;
     }
     h3 {
         font-weight: 500;
@@ -99,7 +105,7 @@ body {
         color: $lightGray;
     }
     .welcome {
-        width: 9.5rem;
+        height: 15rem;
     }
     .button  {
         text-decoration: none;
@@ -121,10 +127,20 @@ body {
     }
 .input {
     max-width: 15rem;
-    text-indent: .2rem;
-    border: 2px solid #8b8a8b;
-    border-radius: 4px;
     height: 1.8rem;
+    border: none;
+    appearance: none;
+    background: $input;
+    padding: .3rem .8rem;
+    border-radius: .3rem;
+    outline: none;
+    color:$lightGray;
+}
+
+label {
+    color: $lightGray;
+    font-size: .8rem;
+    margin-bottom: .3rem;
 }
 
 .error {
