@@ -211,7 +211,6 @@ const newUsers = [];
 
 document.querySelector("#signUp").addEventListener("click", newUser);
 
-
 //Function new User
 function newUser () {
     existingUsers = JSON.parse(localStorage.getItem("arrayUsers"));

@@ -200,7 +200,7 @@ body .avatar:hover {
   border-radius: 2rem;
 }
 
-body .avatar:active {
+body .active {
   border: solid 2px #43a047;
   border-radius: 2rem;
 }
