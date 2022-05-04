@@ -139,7 +139,7 @@ selectElement.addEventListener('change', (event) => {
     } if (event.target.value === "week") {
 
         if(randomArrayWeek1.length === 0 ){
-        array_length = 12;
+        array_length = 13;
 
         for(let i=1; i<array_length; i++) {
             randomArrayWeek1.push(getRndInteger(10,150));
@@ -250,13 +250,28 @@ function newUser () {
 
 document.querySelector("#signIn").addEventListener("click", login);
 
+//Lottie animation library
+const svgContainer = document.querySelector("#svg");
+const animItem = bodymovin.loadAnimation({
+    wrapper: svgContainer,
+    animType: 'svg',
+    loop: false,
+    autoplay: false,
+    path:"https://assets3.lottiefiles.com/packages/lf20_lg6lh7fp.json"
+});
 
+animItem.addEventListener('complete', animStop);
+
+function animStop () {
+    document.querySelector("#loginScreen").style.display = "none", document.querySelector(".dashboard").style.display = "block"
+}
 
 //Function Login (validate if the user exist and if both email and password match)
 function login () {
     const loginEmail = document.querySelector("#loginEmail").value;
     const loginPassword = document.querySelector("#loginPassword").value;
-
+    //added lottie animation play on login function
+   
     existingUsers = JSON.parse(localStorage.getItem("arrayUsers"));
 
     if(existingUsers == null) {
@@ -264,7 +279,7 @@ function login () {
     } else {
         const found = existingUsers.find( e => e.email === loginEmail && e.password === loginPassword);
         //Simplified function with ternary operator
-        found ? (document.querySelector("#loginScreen").style.display = "none", document.querySelector(".dashboard").style.display = "block") : 
+        found ? (animItem.goToAndPlay(0,true)) : 
         document.querySelector("#errorMsgLogin").innerHTML = ("Looks like you don't have an account"),document.querySelector("#errorImgLogin").style.display = "block";
     }
 

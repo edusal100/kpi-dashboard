@@ -209,6 +209,12 @@ body #errorImgLogin, body #errorImgSignup {
   width: 1.5rem;
 }
 
+body .svg {
+  width: 200px;
+  pointer-events: none;
+  position: absolute;
+}
+
 body .dashboard, body #loginScreen, body #signUpScreen, body #errorImgLogin, body #errorImgSignup {
   display: none;
 }

@@ -167,6 +167,12 @@ label {
     width: 1.5rem;
 }
 
+.svg {
+    width: 200px;
+    pointer-events: none;
+    position: absolute;
+}
+
 .dashboard, #loginScreen, #signUpScreen, #errorImgLogin, #errorImgSignup {
     display: none;
 }
