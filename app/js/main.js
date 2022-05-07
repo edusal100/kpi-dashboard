@@ -209,7 +209,14 @@ let arrayUsers = [];
 let existingUsers = [];
 const newUsers = [];
 
+// Call funcion new user with signup button and with Enter key on password input text
 document.querySelector("#signUp").addEventListener("click", newUser);
+document.querySelector("#password").addEventListener("keydown", (e) => {
+    if(e.key === "Enter") {
+        newUser();
+
+    }
+});
 
 //Function new User
 function newUser () {
@@ -248,9 +255,18 @@ function newUser () {
     }
 }
 
+// Call funcion login with login button and with Enter key on password input text
 document.querySelector("#signIn").addEventListener("click", login);
+document.querySelector("#loginPassword").addEventListener("keydown", (e) => {
+    if(e.key === "Enter") {
+        login();
+
+    }
+});
+
 
 //Lottie animation library
+/*
 const svgContainer = document.querySelector("#svg");
 const animItem = bodymovin.loadAnimation({
     wrapper: svgContainer,
@@ -260,11 +276,13 @@ const animItem = bodymovin.loadAnimation({
     path:"https://assets3.lottiefiles.com/packages/lf20_lg6lh7fp.json"
 });
 
+
 animItem.addEventListener('complete', animStop);
 
 function animStop () {
     document.querySelector("#loginScreen").style.display = "none", document.querySelector(".dashboard").style.display = "block"
 }
+*/
 
 //Function Login (validate if the user exist and if both email and password match)
 function login () {
@@ -274,12 +292,12 @@ function login () {
    
     existingUsers = JSON.parse(localStorage.getItem("arrayUsers"));
 
-    if(existingUsers == null) {
+    if(existingUsers === null) {
         document.querySelector("#errorMsgLogin").innerHTML = ("Looks like you don't have an account"),document.querySelector("#errorImgLogin").style.display = "block";
     } else {
         const found = existingUsers.find( e => e.email === loginEmail && e.password === loginPassword);
         //Simplified function with ternary operator
-        found ? (animItem.goToAndPlay(0,true)) : 
+        found ? (document.querySelector("#loginScreen").style.display = "none", document.querySelector(".dashboard").style.display = "block") : 
         document.querySelector("#errorMsgLogin").innerHTML = ("Looks like you don't have an account"),document.querySelector("#errorImgLogin").style.display = "block";
     }
 
