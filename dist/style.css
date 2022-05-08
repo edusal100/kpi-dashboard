@@ -190,6 +190,15 @@ body .input {
   color: #636469;
 }
 
+body select {
+  background: transparent;
+  border: none;
+  border-bottom: 0px;
+  overflow: hidden;
+  border-radius: .3rem;
+  color: #636469;
+}
+
 body label {
   color: #636469;
   font-size: .8rem;

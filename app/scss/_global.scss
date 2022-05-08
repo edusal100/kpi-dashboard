@@ -149,6 +149,15 @@ body {
     color:$mediumGray;
 }
 
+select {
+    background: transparent;
+    border:none;
+    border-bottom: 0px;
+    overflow: hidden;
+    border-radius: .3rem;
+    color: $mediumGray;
+}
+
 label {
     color: $mediumGray;
     font-size: .8rem;
