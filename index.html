@@ -17,7 +17,7 @@
 </head> 
 <body>
 
-
+<!-- Welcome Screen -->
 
 <div class="main_container flex flex-column flex-jc-c flex-ai-c">
     <div class="svg" id="svg"></div>
@@ -92,10 +92,46 @@
     </div>
 <!-- End of Sign up Screen -->
 
-  
+
 <!-- Dashboard -->
-    <div id="dashboardChart" class="dashboard flex flex-jc-c flex-ai-c">
-        <div class="white_box">
+    <div id="dashboard" class="dashboard flex flex-jc-c flex-ai-c">
+
+    <div id="dashboardSummary" class="flex white_box mb2 flex-gap">
+        <div class="flex flex-gap-1">
+            <img class="chartIcon" src="/images/increase.png" alt="">
+            <div>
+                <h2>$ 855,399</h2>
+                <div class="flex flex-gap-1"><p>Sale increse</p>
+                    <p class="green">+8.14%</p>
+                </div>     
+            </div>
+        </div>
+        <div>
+            <div class="flex flex-gap-1">
+                <img class="chartIcon" src="/images/decrease.png" alt="">
+                <div>
+                    <h2>$ 27,818</h2>
+                    <div class="flex flex-gap-1"><p>Expenses</p>
+                        <p class="red">-4.33%</p>
+                    </div>     
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="flex flex-gap-1">
+                <img class="chartIcon" src="/images/increase.png" alt="">
+                <div>
+                    <h2>19,250</h2>
+                    <div class="flex flex-gap-1"><p>New visitors</p>
+                        <p class="green">+12.82%</p>
+                    </div>     
+                </div>
+            </div>
+        </div>
+    </div>   
+
+    
+        <div id="dashboardChart" class="white_box">
                 <div>
                     <div class="flex flex-jc-sb">
                         <p>PROFIT IN 2022</p>

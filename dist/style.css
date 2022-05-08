@@ -65,8 +65,12 @@
   gap: 1.5rem;
 }
 
+.flex-gap-1 {
+  gap: 1rem;
+}
+
 body {
-  background: #636469;
+  background: #f7faf2;
   font-family: 'Red Hat Display', sans-serif;
   color: #202229;
 }
@@ -77,8 +81,9 @@ body .main_container {
 
 body .white_box {
   background: #ffffff;
-  padding: 1.8rem;
-  border-radius: .3rem;
+  padding: 1.2rem 1.6rem;
+  border-radius: .7rem;
+  border: 2px solid #f7faf2;
 }
 
 body .mb {
@@ -103,6 +108,10 @@ body .mt {
 
 body .green {
   color: #19b962;
+}
+
+body .red {
+  color: #ff7474;
 }
 
 body .arrow {
@@ -213,6 +222,10 @@ body .svg {
   width: 200px;
   pointer-events: none;
   position: absolute;
+}
+
+body .chartIcon {
+  width: 3rem;
 }
 
 body .dashboard, body #loginScreen, body #signUpScreen, body #errorImgLogin, body #errorImgSignup {

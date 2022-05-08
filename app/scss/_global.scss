@@ -35,6 +35,9 @@
     &-gap {
         gap: 1.5rem;
     }
+    &-gap-1 {
+        gap: 1rem;
+    }
 }
 
 body {
@@ -48,8 +51,9 @@ body {
 
     .white_box {
         background: $white;
-        padding: 1.8rem;
-        border-radius: .3rem;
+        padding: 1.2rem 1.6rem;
+        border-radius: .7rem;
+        border: 2px solid $lightGray;
     }
 
     .mb {
@@ -73,6 +77,10 @@ body {
         color: $green;
     }
 
+    .red {
+        color: $redish;
+    }
+
     .arrow {
         width: 0.55rem;
     }
@@ -93,7 +101,7 @@ body {
     p{
         font-weight: 500;
         font-size: 0.75rem;
-        color: $lightGray;
+        color: $mediumGray;
     }
     h2 {
         font-weight: 700;
@@ -102,10 +110,10 @@ body {
     h3 {
         font-weight: 500;
         font-size: 1rem;
-        color: $lightGray;
+        color: $mediumGray;
     }
     h4{
-        color: $lightGray;
+        color: $mediumGray;
         font-size: .8rem;
     }
     .welcome {
@@ -138,11 +146,11 @@ body {
     padding: .3rem .8rem;
     border-radius: .3rem;
     outline: none;
-    color:$lightGray;
+    color:$mediumGray;
 }
 
 label {
-    color: $lightGray;
+    color: $mediumGray;
     font-size: .8rem;
     margin-bottom: .3rem;
 }
@@ -171,6 +179,10 @@ label {
     width: 200px;
     pointer-events: none;
     position: absolute;
+}
+
+.chartIcon {
+    width: 3rem;
 }
 
 .dashboard, #loginScreen, #signUpScreen, #errorImgLogin, #errorImgSignup {
