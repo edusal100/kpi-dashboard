@@ -96,7 +96,15 @@
 <!-- Dashboard -->
     <div id="dashboard" class="dashboard flex flex-jc-c flex-ai-c">
 
-    <div id="dashboardSummary" class="flex white_box mb2 flex-gap">
+        <div class="flex flex-start flex-gap mb">
+            <h3 class="activeGray">Overview</h3>
+            <h3 class="gray">Revenue</h3>
+            <h3 class="gray">Operations</h3>
+            <h3 class="gray">Visits</h3>
+        </div>
+
+<!-- Dashboard Summary-->
+    <div id="dashboardSummary" class="flex white_box mb flex-gap">
         <div class="flex flex-gap-1">
             <img class="chartIcon" src="/images/increase.png" alt="">
             <div>
@@ -130,29 +138,31 @@
         </div>
     </div>   
 
-    
+    <!-- Dashboard Chart-->
         <div id="dashboardChart" class="white_box">
                 <div>
                     <div class="flex flex-jc-sb">
                         <p>PROFIT IN 2022</p>
-                        <div>
+                        <div class="select">
                         <select name="" id="timeFrame">
-                            <option value="year">Year</option>
-                            <option value="month">Month</option>
-                            <option value="week">Week</option>
+                            <option value="year">Yearly</option>
+                            <option value="month">Monthly</option>
+                            <option value="week">Weekly</option>
                         </select>
                         </div>      
                     </div>
                     
                         <div class="flex flex-jc-sb flex-gap">
                             <h1>US$ 153,489</h1>
+                            <div class="flex flex-jc-end">
                             <div class="flex-self-end">
                                 <p id="previous">2021</p>
                                 <hr class="dash blue">
                             </div>
-                            <div class="flex-self-end">
+                            <div class="flex-self-end ml-1">
                                 <p id="current">2022</p>
                                 <hr class="blue">
+                            </div>
                             </div>
                         </div>
                     

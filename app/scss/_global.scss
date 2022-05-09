@@ -14,6 +14,12 @@
     &-jc-sa{
         justify-content: space-around;
     }
+    &-jc-end{
+        justify-content: flex-end;
+    }
+    &-jc-start{
+        justify-content: flex-start;
+    }
     &-ai-c {
     align-items: center;
     }
@@ -68,6 +74,9 @@ body {
     .ml {
         margin-left: 0.5rem;
     }
+    .ml-1 {
+        margin-left: 1rem;
+    }
 
     .mt {
         margin-top: 1rem;
@@ -79,6 +88,13 @@ body {
 
     .red {
         color: $redish;
+    }
+
+    .gray {
+        color: $mediumGray;
+    }
+    .activeGray {
+        color:$darkgray;
     }
 
     .arrow {
@@ -150,12 +166,17 @@ body {
 }
 
 select {
-    background: transparent;
-    border:none;
-    border-bottom: 0px;
-    overflow: hidden;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-family: inherit;
+    color: $mediumGray;    
+}
+
+.select {
+    border: 1px solid $mediumGray;
     border-radius: .3rem;
-    color: $mediumGray;
+    padding: .3rem .7rem;
 }
 
 label {

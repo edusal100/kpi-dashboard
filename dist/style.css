@@ -26,6 +26,18 @@
       justify-content: space-around;
 }
 
+.flex-jc-end {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.flex-jc-start {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
 .flex-ai-c {
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -102,6 +114,10 @@ body .ml {
   margin-left: 0.5rem;
 }
 
+body .ml-1 {
+  margin-left: 1rem;
+}
+
 body .mt {
   margin-top: 1rem;
 }
@@ -112,6 +128,14 @@ body .green {
 
 body .red {
   color: #ff7474;
+}
+
+body .gray {
+  color: #7a7b80;
+}
+
+body .activeGray {
+  color: #202229;
 }
 
 body .arrow {
@@ -135,7 +159,7 @@ body h4 {
 body p {
   font-weight: 500;
   font-size: 0.75rem;
-  color: #636469;
+  color: #7a7b80;
 }
 
 body h2 {
@@ -146,11 +170,11 @@ body h2 {
 body h3 {
   font-weight: 500;
   font-size: 1rem;
-  color: #636469;
+  color: #7a7b80;
 }
 
 body h4 {
-  color: #636469;
+  color: #7a7b80;
   font-size: .8rem;
 }
 
@@ -187,20 +211,25 @@ body .input {
   padding: .3rem .8rem;
   border-radius: .3rem;
   outline: none;
-  color: #636469;
+  color: #7a7b80;
 }
 
 body select {
-  background: transparent;
+  background-color: transparent;
   border: none;
-  border-bottom: 0px;
-  overflow: hidden;
+  outline: none;
+  font-family: inherit;
+  color: #7a7b80;
+}
+
+body .select {
+  border: 1px solid #7a7b80;
   border-radius: .3rem;
-  color: #636469;
+  padding: .3rem .7rem;
 }
 
 body label {
-  color: #636469;
+  color: #7a7b80;
   font-size: .8rem;
   margin-bottom: .3rem;
 }
