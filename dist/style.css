@@ -93,7 +93,7 @@ body .main_container {
 
 body .white_box {
   background: #ffffff;
-  padding: 1.2rem 1.6rem;
+  padding: 1rem 1.5rem;
   border-radius: .7rem;
   border: 2px solid #f7faf2;
 }
@@ -122,6 +122,10 @@ body .mt {
   margin-top: 1rem;
 }
 
+body .mt-2 {
+  margin-top: 2rem;
+}
+
 body .green {
   color: #19b962;
 }
@@ -136,6 +140,10 @@ body .gray {
 
 body .activeGray {
   color: #202229;
+}
+
+body .bold {
+  font-weight: bold;
 }
 
 body .arrow {
@@ -170,7 +178,7 @@ body h2 {
 body h3 {
   font-weight: 500;
   font-size: 1rem;
-  color: #7a7b80;
+  color: #202229;
 }
 
 body h4 {
@@ -240,6 +248,7 @@ body .error {
 
 body .avatar {
   width: 3rem;
+  height: 3rem;
 }
 
 body .avatar:hover {
@@ -263,7 +272,7 @@ body .svg {
 }
 
 body .chartIcon {
-  width: 3rem;
+  width: 2.5rem;
 }
 
 body .dashboard, body #loginScreen, body #signUpScreen, body #errorImgLogin, body #errorImgSignup {

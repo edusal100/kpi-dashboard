@@ -23,7 +23,7 @@
     <div class="svg" id="svg"></div>
      <!-- Welcome Screen -->
         <div id="welcomeScreen" class="flex flex-jc-c flex-ai-c">
-        <div class="flex flex-jc-sb flex-ai-c white_box mb flex-gap">
+        <div class="flex flex-jc-sb flex-ai-c white_box flex-gap">
             <div class="flex flex-column">
                 <h2 class="mb">Welcome to Ontime</h2>
                 <h3>Unlock your team performance</h3>
@@ -94,13 +94,22 @@
 
 
 <!-- Dashboard -->
-    <div id="dashboard" class="dashboard flex flex-jc-c flex-ai-c">
+    <div id="dashboard" class="main_container dashboard flex flex-jc-c flex-ai-c mt-2">
 
-        <div class="flex flex-start flex-gap mb">
-            <h3 class="activeGray">Overview</h3>
-            <h3 class="gray">Revenue</h3>
-            <h3 class="gray">Operations</h3>
-            <h3 class="gray">Visits</h3>
+        <div class="flex flex-jc-sb">
+            <div>
+            <h1>Dashboard</h1>
+            <p>14:30 PM - 28 January 2021</p>
+            </div>
+            <img class="avatar" src="/images/Avatar1.png" alt="">
+        </div>
+
+
+        <div class="flex flex-start flex-gap mb mt">
+            <h4 class="activeGray">Overview</h4>
+            <h4 class="gray">Revenue</h4>
+            <h4 class="gray">Operations</h4>
+            <h4 class="gray">Visits</h4>
         </div>
 
 <!-- Dashboard Summary-->
@@ -108,7 +117,7 @@
         <div class="flex flex-gap-1">
             <img class="chartIcon" src="/images/increase.png" alt="">
             <div>
-                <h2>$ 855,399</h2>
+                <h3 class="bold">$ 855,399</h3>
                 <div class="flex flex-gap-1"><p>Sale increse</p>
                     <p class="green">+8.14%</p>
                 </div>     
@@ -118,7 +127,7 @@
             <div class="flex flex-gap-1">
                 <img class="chartIcon" src="/images/decrease.png" alt="">
                 <div>
-                    <h2>$ 27,818</h2>
+                    <h3 class="bold">$ 27,818</h3>
                     <div class="flex flex-gap-1"><p>Expenses</p>
                         <p class="red">-4.33%</p>
                     </div>     
@@ -129,14 +138,16 @@
             <div class="flex flex-gap-1">
                 <img class="chartIcon" src="/images/increase.png" alt="">
                 <div>
-                    <h2>19,250</h2>
+                    <h3 class="bold">19,250</h3>
                     <div class="flex flex-gap-1"><p>New visitors</p>
                         <p class="green">+12.82%</p>
                     </div>     
                 </div>
             </div>
         </div>
-    </div>   
+    </div>  
+    
+    <!-- End of Dashboard Summary -->
 
     <!-- Dashboard Chart-->
         <div id="dashboardChart" class="white_box">
@@ -153,7 +164,7 @@
                     </div>
                     
                         <div class="flex flex-jc-sb flex-gap">
-                            <h1>US$ 153,489</h1>
+                            <h2>US$ 153,489</h2>
                             <div class="flex flex-jc-end">
                             <div class="flex-self-end">
                                 <p id="previous">2021</p>
@@ -177,12 +188,13 @@
                     <canvas id="myChart"></canvas>
                 </div>
          </div>
-    
+    <!-- End of Dashboard  Chart-->
+
     </div>
 
-<!-- End of Dashboard -->
-
+<!-- End of Dashboard-->
 </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.4/lottie.min.js"></script>
     <script src="/app/js/user.js"></script>
     <script src="/app/js/main.js"></script>

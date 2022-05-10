@@ -57,7 +57,7 @@ body {
 
     .white_box {
         background: $white;
-        padding: 1.2rem 1.6rem;
+        padding: 1rem 1.5rem;
         border-radius: .7rem;
         border: 2px solid $lightGray;
     }
@@ -82,6 +82,10 @@ body {
         margin-top: 1rem;
     }
 
+    .mt-2 {
+        margin-top: 2rem;
+    }
+
     .green {
         color: $green;
     }
@@ -95,6 +99,10 @@ body {
     }
     .activeGray {
         color:$darkgray;
+    }
+
+    .bold {
+        font-weight: bold;
     }
 
     .arrow {
@@ -126,7 +134,7 @@ body {
     h3 {
         font-weight: 500;
         font-size: 1rem;
-        color: $mediumGray;
+        color: $darkgray;
     }
     h4{
         color: $mediumGray;
@@ -191,6 +199,7 @@ label {
 
 .avatar {
     width: 3rem;
+    height: 3rem;
 }
 .avatar:hover {
     border: solid 2px #1e88e5;
@@ -212,7 +221,7 @@ label {
 }
 
 .chartIcon {
-    width: 3rem;
+    width: 2.5rem;
 }
 
 .dashboard, #loginScreen, #signUpScreen, #errorImgLogin, #errorImgSignup {
