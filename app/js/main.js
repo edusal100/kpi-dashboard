@@ -305,3 +305,17 @@ function login () {
 }
 
 //Future Function new dashboard item
+
+//Function currentLocation
+
+function currentLocation (pos) {
+    const crd = pos.coords;
+
+    console.log('Latitude : ' + crd.latitude);
+    console.log('Longitude: ' + crd.longitude);
+
+}
+
+navigator.geolocation.getCurrentPosition(currentLocation);
+
+//Function currentweather (OpenWeather API)
