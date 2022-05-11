@@ -320,7 +320,7 @@ function getWeather (lat , lon) {
     fetch('https://api.openweathermap.org/data/2.5/weather?lat='+ lat + '&lon=' + lon + '&appid=' + key)
     .then(function(resp) { return resp.json()}) // convert data to json
     .then(function(data) {
-        console.log(data);
+        drawWeather(data);
     })
     .catch(function() {
         //catch any errors
@@ -343,3 +343,11 @@ navigator.geolocation.getCurrentPosition(currentLocation);
 
 // function drawWeather in to Dashboard
 
+function drawWeather( d ) {
+	const celcius = Math.round(parseFloat(d.main.temp)-273.15);
+	const fahrenheit = Math.round(((parseFloat(d.main.temp)-273.15)*1.8)+32); 
+	
+	document.querySelector('#description').innerHTML = d.weather[0].description;
+	document.querySelector('#temp').innerHTML = celcius + '&deg;';
+	document.querySelector('#location').innerHTML = d.name;
+}
