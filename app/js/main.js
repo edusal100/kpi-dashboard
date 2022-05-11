@@ -88,6 +88,13 @@ const current = new Date();
 current.setMonth(current.getMonth()-1);
 const previousMonth = current.toLocaleString('default', { month: 'long' });
 
+const options = { month: 'long', day: 'numeric', year: 'numeric', weekday: 'long'};
+
+// Get the current date and set it on the dashboard (dom)
+document.querySelector("#currentTime").innerHTML = (new Date().toLocaleDateString('en-US', options));
+
+console.log(new Date().toLocaleDateString())
+
 currentDate = new Date();
     startDate = new Date(currentDate.getFullYear(), 0, 1);
     const days = Math.floor((currentDate - startDate) /
