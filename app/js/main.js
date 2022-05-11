@@ -93,7 +93,6 @@ const options = { month: 'long', day: 'numeric', year: 'numeric', weekday: 'long
 // Get the current date and set it on the dashboard (dom)
 document.querySelector("#currentTime").innerHTML = (new Date().toLocaleDateString('en-US', options));
 
-console.log(new Date().toLocaleDateString())
 
 currentDate = new Date();
     startDate = new Date(currentDate.getFullYear(), 0, 1);
@@ -313,16 +312,31 @@ function login () {
 
 //Future Function new dashboard item
 
+
+//Function currentweather (OpenWeather API)
+
+function getWeather (lat , lon) {
+    const key = "abc8f38e368201d5eb34d3037dcb9e58";
+    fetch('https://api.openweathermap.org/data/2.5/weather?lat='+ lat + '&lon=' + lon + '&appid=' + key)
+    .then(function(resp) { return resp.json()}) // convert data to json
+    .then(function(data) {
+        console.log(data);
+    })
+    .catch(function() {
+        //catch any errors
+    });
+}
+
 //Function currentLocation
 
 function currentLocation (pos) {
     const crd = pos.coords;
 
-    console.log('Latitude : ' + crd.latitude);
-    console.log('Longitude: ' + crd.longitude);
+    let latitude = crd.latitude;
+    let longitude = crd.longitude;
+
+    getWeather(latitude, longitude);
 
 }
 
 navigator.geolocation.getCurrentPosition(currentLocation);
-
-//Function currentweather (OpenWeather API)
