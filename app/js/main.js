@@ -340,3 +340,6 @@ function currentLocation (pos) {
 }
 
 navigator.geolocation.getCurrentPosition(currentLocation);
+
+// function drawWeather in to Dashboard
+
