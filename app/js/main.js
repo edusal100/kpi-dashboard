@@ -303,7 +303,7 @@ function login () {
     } else {
         const found = existingUsers.find( e => e.email === loginEmail && e.password === loginPassword);
         //Simplified function with ternary operator
-        found ? (document.querySelector("#loginScreen").style.display = "none", document.querySelector(".dashboard").style.display = "block") : 
+        found ? (document.querySelector("#loginScreen").style.display = "none", document.querySelector(".dashboard").style.display = "block"): 
         document.querySelector("#errorMsgLogin").innerHTML = ("Looks like you don't have an account"),document.querySelector("#errorImgLogin").style.display = "block";
     }
 
@@ -350,4 +350,7 @@ function drawWeather( d ) {
 	document.querySelector('#description').innerHTML = d.weather[0].description;
 	document.querySelector('#temp').innerHTML = celcius + '&deg;';
 	document.querySelector('#location').innerHTML = d.name;
+
+    const weatherImg = document.querySelector ('#icon')
+    weatherImg.src = "http://openweathermap.org/img/w/" + d.weather[0].icon +".png";
 }
