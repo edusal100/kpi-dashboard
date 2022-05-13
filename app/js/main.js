@@ -302,8 +302,10 @@ function login () {
         document.querySelector("#errorMsgLogin").innerHTML = ("Looks like you don't have an account"),document.querySelector("#errorImgLogin").style.display = "block";
     } else {
         const found = existingUsers.find( e => e.email === loginEmail && e.password === loginPassword);
+        console.log (found);
         //Simplified function with ternary operator
-        found ? (document.querySelector("#loginScreen").style.display = "none", document.querySelector(".dashboard").style.display = "block"): 
+        found ? (document.querySelector("#loginScreen").style.display = "none", document.querySelector(".dashboard").style.display = "block",
+        document.querySelector("#welcomeMsg").innerHTML = (found.name)): 
         document.querySelector("#errorMsgLogin").innerHTML = ("Looks like you don't have an account"),document.querySelector("#errorImgLogin").style.display = "block";
     }
 
