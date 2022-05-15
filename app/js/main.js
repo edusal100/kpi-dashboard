@@ -226,17 +226,28 @@ window.onload = function addClickAvatar () {
 }
 
 function selectedAvatar () {
-    const element = document.querySelector("#" + this.id);
+    const element = document.getElementById(this.id);
     if(element.classList.contains("active")){
         element.classList.remove("active");
     } else {
         element.classList.add("active");
     }
     active = document.querySelectorAll(".active");
-    if (active.length > 1) {  
-        active.item(0).classList.remove("active");
+    if(active.length == 1) {
+        firstItem = this.id;
+    } else if (active.length > 1) {
+        secondItem = this.id;
+        console.log(secondItem);
+        console.log(active);
+        if(firstItem > secondItem){
+            active.item(1).classList.remove("active");
+            console.log("im here")
+        } else {
+            active.item(0).classList.remove("active");
+            console.log("no im here")
+        }     
+        }
     }
-}
 
 // Call funcion new user with signup button and with Enter key on password input text
 document.querySelector("#signUp").addEventListener("click", newUser);
@@ -254,12 +265,12 @@ function newUser () {
     const name = document.querySelector("#name").value;
     const email = document.querySelector("#email").value;
     const password = document.querySelector("#password").value;
-    //const userImg = document.querySelector("#")
+    const userAvatar = document.querySelector(".active").src;
 
-    const user = new User (name, email, password);
+    const user = new User (name, email, password, userAvatar);
     
     //if all 3 inputs has something then we push to array and localstorage plus access to dashboard
-    if (name && email && password){ 
+    if (name && email && password && userAvatar){ 
 
     //if there isnt an existing user push the new user and save
     if(existingUsers == null) {
@@ -329,7 +340,7 @@ function login () {
         console.log (found);
         //Simplified function with ternary operator
         found ? (document.querySelector("#loginScreen").style.display = "none", document.querySelector(".dashboard").style.display = "block",
-        document.querySelector("#welcomeMsg").innerHTML = (found.name)): 
+        document.querySelector("#welcomeMsg").innerHTML = (found.name), document.querySelector("#dashboardAvatar").src = (found.userAvatar)): 
         document.querySelector("#errorMsgLogin").innerHTML = ("Looks like you don't have an account"),document.querySelector("#errorImgLogin").style.display = "block";
     }
 
