@@ -215,6 +215,29 @@ let arrayUsers = [];
 let existingUsers = [];
 const newUsers = [];
 
+//function avatar selected
+const avatar = document.querySelectorAll(".avatar");
+let active;
+window.onload = function addClickAvatar () {
+    for (var i = 0 ; i< avatar.length; i++ ) {
+        var a = avatar[i];
+        a.onclick = selectedAvatar
+    }
+}
+
+function selectedAvatar () {
+    const element = document.querySelector("#" + this.id);
+    if(element.classList.contains("active")){
+        element.classList.remove("active");
+    } else {
+        element.classList.add("active");
+    }
+    active = document.querySelectorAll(".active");
+    if (active.length > 1) {  
+        active.item(0).classList.remove("active");
+    }
+}
+
 // Call funcion new user with signup button and with Enter key on password input text
 document.querySelector("#signUp").addEventListener("click", newUser);
 document.querySelector("#password").addEventListener("keydown", (e) => {
@@ -227,10 +250,11 @@ document.querySelector("#password").addEventListener("keydown", (e) => {
 //Function new User
 function newUser () {
     existingUsers = JSON.parse(localStorage.getItem("arrayUsers"));
-    
+
     const name = document.querySelector("#name").value;
     const email = document.querySelector("#email").value;
     const password = document.querySelector("#password").value;
+    //const userImg = document.querySelector("#")
 
     const user = new User (name, email, password);
     
