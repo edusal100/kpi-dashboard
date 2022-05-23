@@ -86,7 +86,7 @@
 }
 
 body {
-  background: #f7faf2;
+  background: #f3f4f8;
   font-family: 'Red Hat Display', sans-serif;
   color: #202229;
 }
@@ -95,11 +95,20 @@ body .main_container {
   height: 100vh;
 }
 
-body .white_box {
-  background: #ffffff;
-  padding: 1rem 1.5rem;
-  border-radius: .7rem;
-  border: 2px solid #f7faf2;
+body .dashboard_box {
+  padding: 1.3rem 1.5rem;
+  border-radius: 1.2rem;
+}
+
+body .dashboard_box_slim {
+  padding: 1rem 1.4rem;
+  border-radius: 1.2rem;
+}
+
+body .dashboard_box_xslim {
+  padding: 1rem .85rem;
+  border-radius: 1.2rem;
+  border: 2px solid #f3f4f8;
 }
 
 body .mb {
@@ -130,8 +139,36 @@ body .mt-2 {
   margin-top: 2rem;
 }
 
+body .hp {
+  padding: 0rem 1rem;
+}
+
+body .hp-2 {
+  padding: 0rem 2rem;
+}
+
+body .vp {
+  padding: 1rem 0rem;
+}
+
 body .green {
   color: #19b962;
+}
+
+body .white_bg {
+  background: #ffffff;
+}
+
+body .white_txt {
+  color: #ffffff;
+}
+
+body .purple_bg {
+  background: #5051F9;
+}
+
+body .purple_txt {
+  color: #5051F9;
 }
 
 body .red {
@@ -147,11 +184,31 @@ body .activeGray {
 }
 
 body .bold {
-  font-weight: bold;
+  font-weight: 900;
+}
+
+body .black_bg {
+  background: #111111;
+}
+
+body .black_txt {
+  color: #111111;
+}
+
+body .blue_txt {
+  color: #1dA7ff;
+}
+
+body .blue_bg {
+  background: #1dA7ff;
 }
 
 body .medium {
   font-size: 1rem;
+}
+
+body .small {
+  font-size: 0.7rem;
 }
 
 body .arrow {
@@ -164,7 +221,7 @@ body .dash {
 }
 
 body .blue {
-  color: #2d8dfe;
+  color: #1dA7ff;
 }
 
 body h4 {
@@ -209,11 +266,16 @@ body .button {
 
 body .button2 {
   text-decoration: none;
-  background: #2d8dfe;
+  background: #1dA7ff;
   color: #ffffff;
   padding: .5rem 1rem;
   border-radius: .3rem;
   cursor: pointer;
+}
+
+body .button_small {
+  border-radius: .3rem;
+  padding: .3rem .8rem;
 }
 
 body .input {
@@ -235,13 +297,13 @@ body select {
   border: none;
   outline: none;
   font-family: inherit;
-  color: #7a7b80;
+  color: #ffffff;
 }
 
 body .select {
-  border: 1px solid #7a7b80;
+  border: 1px solid #ffffff;
   border-radius: .3rem;
-  padding: .3rem .7rem;
+  padding: .3rem .3rem;
 }
 
 body label {
@@ -278,14 +340,22 @@ body #errorImgLogin, body #errorImgSignup {
   width: 1.5rem;
 }
 
-body .svg {
-  width: 200px;
-  pointer-events: none;
-  position: absolute;
-}
-
 body .chartIcon {
   width: 2.5rem;
+}
+
+body .imgSize {
+  width: 1rem;
+  height: 1rem;
+}
+
+body .imgSizeMed {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+body .logo {
+  width: 2rem;
 }
 
 body .dashboard, body #loginScreen, body #signUpScreen, body #errorImgLogin, body #errorImgSignup {

@@ -11,19 +11,17 @@
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
 
+    <link rel="shortcut icon" href="/images/logo.ico" type="image/x-icon">
     <link rel="stylesheet" href="/dist/style.css">
 
     <title>Ontime</title>
 </head> 
 <body>
 
-<!-- Welcome Screen -->
-
-<div class="main_container flex flex-column flex-jc-c flex-ai-c">
-    <div class="svg" id="svg"></div>
+<div id="mainContainer"class="main_container flex flex-ai-c flex-jc-c"> <!-- Main Container -->
      <!-- Welcome Screen -->
-        <div id="welcomeScreen" class="flex flex-jc-c flex-ai-c">
-        <div class="flex flex-jc-sb flex-ai-c white_box flex-gap">
+    <div id="welcomeScreen" class="flex flex-jc-c flex-ai-c">
+        <div class="flex flex-jc-sb flex-ai-c dashboard_box white_bg flex-gap">
             <div class="flex flex-column">
                 <h2 class="mb">Welcome to Ontime</h2>
                 <h3>Unlock your team performance</h3>
@@ -39,8 +37,8 @@
     <!-- End of Welcome Screen -->
 
     <!-- Login Screen -->
-        <div id="loginScreen" class="flex flex-jc-c flex-ai-c">
-        <div class="flex flex-jc-sb flex-ai-c white_box mb flex-gap">
+    <div id="loginScreen" class="flex flex-jc-c flex-ai-c">
+        <div class="flex flex-jc-sb flex-ai-c dashboard_box white_bg mb flex-gap">
             <div class="flex flex-column">
                 <h2>Welcome Back!</h2>
                 <h3 class="mb">Login to your Ontime account.</h3>
@@ -63,7 +61,7 @@
 
     <!-- Sign up Screen -->
     <div id="signUpScreen" class="flex flex-jc-c flex-ai-c">
-        <div class="flex flex-jc-sb flex-ai-c white_box mb flex-gap">
+        <div class="flex flex-jc-sb flex-ai-c dashboard_box white_bg mb flex-gap">
             <div class="flex flex-column">
                 <h2 class="mb">Let's get you started</h2>
                 <h4 class="mb">Choose your avatar<h4>
@@ -94,9 +92,17 @@
 
 
 <!-- Dashboard -->
-    <div id="dashboard" class="main_container dashboard flex flex-jc-c flex-ai-c mt">
 
-        <div class="flex flex-jc-sb">
+<div id="dashboard" class="dashboard flex flex-jc-c">
+    <div class="flex flex-ai-c vp"><!-- Dashboard Flex main-->
+        <div class="flex flex-column flex-ai-c">
+            <img class="logo mb05" src="/images/logo.png" alt="">
+            <p class="black_txt bold">ONTIME</p>
+        </div>
+
+       <div class="flex flex-column hp-2"> <!-- Dashboard central element-->
+
+        <div class="flex flex-jc-sb"> <!-- Dashboard welcome element-->
             <div>
             <p class="medium">Welcome Back,</p>
             <h1 id="welcomeMsg"></h1>
@@ -112,57 +118,13 @@
                 <img id="dashboardAvatar" class="avatar2" src="" alt="">
             </div>
         </div>
-
-
-        <div class="flex flex-start flex-gap mb mt">
-            <h4 class="activeGray">Overview</h4>
-            <h4 class="gray">Revenue</h4>
-            <h4 class="gray">Operations</h4>
-            <h4 class="gray">Visits</h4>
-        </div>
-
-<!-- Dashboard Summary-->
-    <div id="dashboardSummary" class="flex white_box mb flex-gap">
-        <div class="flex flex-gap-1">
-            <img class="chartIcon" src="/images/increase.png" alt="">
-            <div>
-                <h3 class="bold">$ 855,399</h3>
-                <div class="flex flex-gap-1"><p>Sale increse</p>
-                    <p class="green">+8.14%</p>
-                </div>     
-            </div>
-        </div>
-        <div>
-            <div class="flex flex-gap-1">
-                <img class="chartIcon" src="/images/decrease.png" alt="">
-                <div>
-                    <h3 class="bold">$ 27,818</h3>
-                    <div class="flex flex-gap-1"><p>Expenses</p>
-                        <p class="red">-4.33%</p>
-                    </div>     
-                </div>
-            </div>
-        </div>
-        <div>
-            <div class="flex flex-gap-1">
-                <img class="chartIcon" src="/images/increase.png" alt="">
-                <div>
-                    <h3 class="bold">19,250</h3>
-                    <div class="flex flex-gap-1"><p>New visitors</p>
-                        <p class="green">+12.82%</p>
-                    </div>     
-                </div>
-            </div>
-        </div>
-    </div>  
     
-    <!-- End of Dashboard Summary -->
+<div class="flex flex-jc-sb mt flex-gap-1">
 
-    <!-- Dashboard Chart-->
-        <div id="dashboardChart" class="white_box">
-                <div>
+<!-- Dashboard Chart-->
+        <div id="dashboardChart" class="dashboard_box purple_bg">
                     <div class="flex flex-jc-sb">
-                        <p>PROFIT IN 2022</p>
+                        <p class="white_txt">PROFIT IN 2022</p>
                         <div class="select">
                         <select name="" id="timeFrame">
                             <option value="year">Yearly</option>
@@ -173,14 +135,14 @@
                     </div>
                     
                         <div class="flex flex-jc-sb flex-gap">
-                            <h2>US$ 153,489</h2>
+                            <h2 class="white_txt">$ 153,489</h2>
                             <div class="flex flex-jc-end">
                             <div class="flex-self-end">
-                                <p id="previous">2021</p>
+                                <p class="white_txt" id="previous">2021</p>
                                 <hr class="dash blue">
                             </div>
                             <div class="flex-self-end ml-1">
-                                <p id="current">2022</p>
+                                <p class="white_txt" id="current">2022</p>
                                 <hr class="blue">
                             </div>
                             </div>
@@ -189,23 +151,60 @@
                     <div class="flex">
                         <img class="arrow" src="/images/arrow_green.svg" alt="">
                         <h4 class="ml green">32,85%</h4>
-                        <p class="flex-self-end ml">vs last year</p>
+                        <p class="flex-self-end ml white_txt">vs last year</p>
                     </div>    
-                </div>
-
-                <div class="chart_container">
-                    <canvas id="myChart" height="100"></canvas>
+                <div class="chart_container"> <!-- Chart-->
+                    <canvas id="myChart" height="150"></canvas>
                 </div>
          </div>
     <!-- End of Dashboard  Chart-->
 
-    </div>
+    <!-- Dashboard Summary-->
+        <div class="flex flex-column dashboard_box white_bg">
+            
+            <div class="flex flex-gap-05 mb">
+                    <img class="imgSize" src="/images/briefing.png" alt="">
+                    <h4 class="bold">Work orders Summary</h4>
+            </div>
+            <div class="flex flex-gap-05 mb">
+                <div class="flex flex-column dashboard_box_slim black_bg flex-ai-c">
+                    <img class="imgSizeMed mb05" src="images/job.png" alt="">
+                    <p class="white_txt small mb05">Release</p>
+                    <h2 class="white_txt">88</h2>
+                </div>
 
-<!-- End of Dashboard-->
-</div>
+                <div class="flex flex-column dashboard_box_slim blue_bg flex-ai-c">
+                    <img class="imgSizeMed mb05" src="images/job.png" alt="">
+                    <p class="white_txt small mb05">On Hold</p>
+                    <h2 class="white_txt">10</h2>
+                </div>
+
+                <div class="flex flex-column dashboard_box_xslim white_bg flex-ai-c">
+                    <img class="imgSizeMed mb05" src="images/job.png" alt="">
+                    <p class="small mb05">Unreleased</p>
+                    <h2>90</h2>
+                </div>
+            </div>
+            <div class="flex flex-ai-c flex-gap-05 flex-jc-sb">
+                <p>On time completion rate:</p>
+                <h3>94%</h3>
+                <div class="flex button_small purple_bg">
+                    <p class="white_txt">23%</p>
+                </div>
+            </div>
+        </div> <!-- End of Dashboard Summary-->
+        
+    </div> <!-- End of milestone element-->
+    
+       </div> <!-- End of Dashboard central element-->
+    </div>
+</div> <!-- End of Dashboard-->
+
+</div> <!-- End of Main Container-->
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.4/lottie.min.js"></script>
-    <script src="/app/js/user.js"></script>
+    <scrip src="/app/js/user.js"></script>
     <script src="/app/js/main.js"></script>
 
 </body>

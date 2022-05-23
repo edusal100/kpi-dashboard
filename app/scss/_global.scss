@@ -60,14 +60,23 @@ body {
         height: 100vh;
     }
 
-    .white_box {
-        background: $white;
-        padding: 1rem 1.5rem;
-        border-radius: .7rem;
+    .dashboard_box {
+        padding: 1.3rem 1.5rem;
+        border-radius: 1.2rem;
+    }
+
+    .dashboard_box_slim {
+        padding: 1rem 1.4rem;
+        border-radius: 1.2rem;
+    }
+
+    .dashboard_box_xslim {
+        padding: 1rem .85rem;
+        border-radius: 1.2rem;
         border: 2px solid $lightGray;
     }
 
-    //Spacing
+    //Spacing margin
 
     .mb {
         margin-bottom: 1rem;
@@ -93,10 +102,38 @@ body {
         margin-top: 2rem;
     }
 
-    //Special colors
+    //Spacing padding
+    .hp {
+        padding: 0rem 1rem;
+    }
+    .hp-2 {
+        padding: 0rem 2rem;
+    }
+
+    .vp {
+        padding: 1rem 0rem;
+    }
+
+    //Special colors and backgrounds
 
     .green {
         color: $green;
+    }
+
+    .white_bg {
+        background: $white;
+    }
+
+    .white_txt {
+        color: $white;
+    }
+
+    .purple_bg {
+        background: $purple;
+    }
+
+    .purple_txt {
+        color: $purple;
     }
 
     .red {
@@ -111,13 +148,32 @@ body {
     }
 
     .bold {
-        font-weight: bold;
+        font-weight: 900;
+    }
+
+    .black_bg {
+        background: $black;
+    }
+    .black_txt {
+        color: $black;
+    }
+
+    .blue_txt {
+        color: $blue;
+    }
+
+    .blue_bg {
+        background: $blue;
     }
 
     //Font sizes
 
     .medium {
         font-size: 1rem;
+    }
+
+    .small {
+        font-size: 0.7rem;
     }
 
     .arrow {
@@ -176,6 +232,11 @@ body {
         cursor: pointer;
         
     }
+    .button_small {
+        border-radius: .3rem;
+        padding: .3rem .8rem;
+    }
+
 .input {
     max-width: 15rem;
     height: 1.8rem;
@@ -193,13 +254,13 @@ select {
     border: none;
     outline: none;
     font-family: inherit;
-    color: $mediumGray;    
+    color: $white;    
 }
 
 .select {
-    border: 1px solid $mediumGray;
+    border: 1px solid $white;
     border-radius: .3rem;
-    padding: .3rem .7rem;
+    padding: .3rem .3rem;
 }
 
 label {
@@ -227,7 +288,7 @@ label {
     border-radius: 2rem;
 }
 .active {
-    border: solid 2px #43a047;
+    border: solid 2px #43a047; 
     border-radius: 2rem;
 }
 
@@ -235,14 +296,22 @@ label {
     width: 1.5rem;
 }
 
-.svg {
-    width: 200px;
-    pointer-events: none;
-    position: absolute;
-}
-
 .chartIcon {
     width: 2.5rem;
+}
+
+.imgSize {
+    width: 1rem;
+    height: 1rem;
+}
+
+.imgSizeMed{
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.logo {
+    width: 2rem;
 }
 
 .dashboard, #loginScreen, #signUpScreen, #errorImgLogin, #errorImgSignup {

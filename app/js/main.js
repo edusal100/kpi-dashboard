@@ -25,7 +25,7 @@ const data = {
     datasets: [{
         data: data1,
         label: "2022",
-        borderColor: "#2d8dfe",
+        borderColor: "white",
         fill: true,
         backgroundColor: "rgb(62,149,205,0.05)",
         pointRadius: 0,
@@ -33,7 +33,7 @@ const data = {
     }, {
         data: data2,
         label: "2021",
-        borderColor: "#2d8dfe",
+        borderColor: "white",
         borderDash: [6,6],
         pointRadius: 0,
         pointHitRadius: 20,
@@ -304,26 +304,6 @@ document.querySelector("#loginPassword").addEventListener("keydown", (e) => {
 
     }
 });
-
-
-//Lottie animation library
-/*
-const svgContainer = document.querySelector("#svg");
-const animItem = bodymovin.loadAnimation({
-    wrapper: svgContainer,
-    animType: 'svg',
-    loop: false,
-    autoplay: false,
-    path:"https://assets3.lottiefiles.com/packages/lf20_lg6lh7fp.json"
-});
-
-
-animItem.addEventListener('complete', animStop);
-
-function animStop () {
-    document.querySelector("#loginScreen").style.display = "none", document.querySelector(".dashboard").style.display = "block"
-}
-*/
 
 //Function Login (validate if the user exist and if both email and password match)
 function login () {
