@@ -327,9 +327,6 @@ function login () {
 
 }
 
-//Future Function new dashboard item
-
-
 //Function currentweather (OpenWeather API)
 
 function getWeather (lat , lon) {
@@ -370,4 +367,18 @@ function drawWeather( d ) {
 
     const weatherImg = document.querySelector ('#icon')
     weatherImg.src = "http://openweathermap.org/img/w/" + d.weather[0].icon +".png";
+}
+
+//function logoff
+
+document.querySelector("#logoff").addEventListener("click", logoff);
+
+function logoff () {
+    document.querySelector("#welcomeScreen").style.display = "block";
+    document.querySelector(".dashboard").style.display = "none";
+    document.querySelector("#loginEmail").value = "";
+    document.querySelector("#loginPassword").value = "";
+    document.querySelector("#errorImgLogin").style.display = "none";
+
+    
 }
