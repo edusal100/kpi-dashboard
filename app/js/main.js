@@ -237,14 +237,10 @@ function selectedAvatar () {
         firstItem = this.id;
     } else if (active.length > 1) {
         secondItem = this.id;
-        console.log(secondItem);
-        console.log(active);
         if(firstItem > secondItem){
             active.item(1).classList.remove("active");
-            console.log("im here")
         } else {
             active.item(0).classList.remove("active");
-            console.log("no im here")
         }     
         }
     }
@@ -317,8 +313,9 @@ function login () {
         document.querySelector("#errorMsgLogin").innerHTML = ("Looks like you don't have an account"),document.querySelector("#errorImgLogin").style.display = "block";
     } else {
         const found = existingUsers.find( e => e.email === loginEmail && e.password === loginPassword);
-        console.log (found);
         //Simplified function with ternary operator
+        console.log(found);
+
         found ? (document.querySelector("#loginScreen").style.display = "none", document.querySelector(".dashboard").style.display = "block",
         document.querySelector("#welcomeMsg").innerHTML = (found.name), document.querySelector("#dashboardAvatar").src = (found.userAvatar)): 
         document.querySelector("#errorMsgLogin").innerHTML = ("Looks like you don't have an account"),document.querySelector("#errorImgLogin").style.display = "block";
@@ -378,7 +375,51 @@ function logoff () {
     document.querySelector(".dashboard").style.display = "none";
     document.querySelector("#loginEmail").value = "";
     document.querySelector("#loginPassword").value = "";
-    document.querySelector("#errorImgLogin").style.display = "none";
+    document.querySelector("#errorImgLogin").style.display = "none";    
+}
 
-    
+//function upload data xls or xlsx
+let files = "";
+let xlsArray = [];
+document.querySelector("#addData").addEventListener("click" , upload)
+
+function upload (){
+    files = document.querySelector("#file_upload").files;
+    if(files.length == 0) {
+        document.querySelector("#errorMsgUpload").innerHTML = ("Please choose any file...")
+    }
+    const filename = files[0].name;
+    const extension = filename.substring(filename.lastIndexOf(".")).toUpperCase();
+    if (extension == ".XLS" || extension == ".XLSX") {
+        excelFileToJSON(files[0]);
+        document.querySelector("#errorMsgUpload").innerHTML = ("")
+    } else {
+        document.querySelector("#errorMsgUpload").innerHTML = ("Please select a valid excel file")
+    }
+}
+
+// function excel file to json
+
+function excelFileToJSON (file) {
+    try {
+        const reader = new FileReader();
+        reader.readAsBinaryString(file);
+        reader.onload = function (e){
+            const data = e.target.result;
+            const workbook = XLSX.read(data, {
+                type: "binary"
+            });
+            const result = {};
+            const firstSheetName = workbook.SheetNames[0];
+            const jsonData = XLSX.utils.sheet_to_json(workbook.Sheets[firstSheetName]);
+            const xlsJson = (JSON.stringify(jsonData));
+            xlsArray = (JSON.parse(xlsJson));
+            
+            console.log(xlsArray);
+
+        }
+    } catch(e) {
+        console.error(e);
+    }
+
 }
