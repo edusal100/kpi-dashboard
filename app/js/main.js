@@ -314,7 +314,6 @@ function login () {
     } else {
         const found = existingUsers.find( e => e.email === loginEmail && e.password === loginPassword);
         //Simplified function with ternary operator
-        console.log(found);
 
         found ? (document.querySelector("#loginScreen").style.display = "none", document.querySelector(".dashboard").style.display = "block",
         document.querySelector("#welcomeMsg").innerHTML = (found.name), document.querySelector("#dashboardAvatar").src = (found.userAvatar)): 
@@ -398,7 +397,9 @@ function upload (){
     }
 }
 
-// function excel file to json
+// function excel file to json + show/change data with this on dashboard
+
+let dollarUSLocale = Intl.NumberFormat('en-US');
 
 function excelFileToJSON (file) {
     try {
@@ -414,8 +415,27 @@ function excelFileToJSON (file) {
             const jsonData = XLSX.utils.sheet_to_json(workbook.Sheets[firstSheetName]);
             const xlsJson = (JSON.stringify(jsonData));
             xlsArray = (JSON.parse(xlsJson));
-            
-            console.log(xlsArray);
+
+            const amount = xlsArray.reduce((accumulator, object) => {
+                return accumulator + object.price;
+            },0)
+
+            const release = xlsArray.reduce((accumulator, object) => {
+                return accumulator + (object.status == "Released");
+            },0)
+
+            const unrelease = xlsArray.reduce((accumulator, object) => {
+                return accumulator + (object.status == "Unreleased");
+            },0)
+
+            const onhold = xlsArray.reduce((accumulator, object) => {
+                return accumulator + (object.status == "On Hold");
+            },0)
+
+            document.querySelector("#amount").innerHTML = ("$ " + dollarUSLocale.format(amount));
+            document.querySelector("#release").innerHTML = (release);
+            document.querySelector("#unrelease").innerHTML = (unrelease);
+            document.querySelector("#onhold").innerHTML = (onhold);
 
         }
     } catch(e) {
