@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap" rel="stylesheet"> 
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+    <script lang="javascript" src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
 
     <link rel="shortcut icon" href="images/logo.ico" type="image/x-icon">
     <link rel="stylesheet" href="dist/style.css">
@@ -65,10 +66,10 @@
             <div class="flex flex-column">
                 <h2 class="mb">Let's get you started</h2>
                 <h4 class="mb">Choose your avatar<h4>
-                    <img id="1" class="avatar" src="/images/Avatar1.png" alt="">
-                    <img id="2" class="avatar" src="/images/Avatar2.png" alt="">
-                    <img id="3" class="avatar" src="/images/Avatar3.png" alt="">
-                    <img id="4" class="avatar" src="/images/Avatar4.png" alt="">
+                    <img id="1" class="avatar" src="images/Avatar1.png" alt="">
+                    <img id="2" class="avatar" src="images/Avatar2.png" alt="">
+                    <img id="3" class="avatar" src="images/Avatar3.png" alt="">
+                    <img id="4" class="avatar" src="images/Avatar4.png" alt="">
                     <div class="flex flex-column mt">
                         <label for="name">Name</label>
                         <input id="name" class="input mb05" type="text" placeholder="name">
@@ -79,13 +80,13 @@
                     </div>
                 <div class="flex flex-column">
                     <div class="flex flex-ai-c">
-                        <img id = "errorImgSignup" src="/images/alert.png" alt="error msg">
+                        <img id = "errorImgSignup" src="images/alert.png" alt="error msg">
                         <p id="errorMsgSignup" class="error ml"></p>
                     </div>
                     <a id="signUp" class="button2 flex-self-start mt">Sign Up</a>
                     </div> 
                 </div>        
-            <img class= "welcome" src="/images/welcome.png" alt="welcome">       
+            <img class= "welcome" src="images/welcome.png" alt="welcome">       
         </div>
     </div>
 <!-- End of Sign up Screen -->
@@ -128,13 +129,19 @@
                 <img id="dashboardAvatar" class="avatar2" src="" alt="">
             </div>
         </div>
+
+        <div class="flex flex-jc-sb flex-ai-c mb mt">
+            <h3>Milestones</h3>
+            <div class="flex">
+            <input type="file" id="file_upload">
+            <a id="addData" class="button">+ Add data</a>
+            </div> 
+        </div>
     
 <div class="flex flex-jc-sb flex-gap-1">
 
 <!-- Dashboard Chart-->
-
-        <div class="flex flex-column">  
-            <div class="mb mt"><h3>Milestones</h3></div>
+        
         <div id="dashboardChart" class="dashboard_box purple_bg height100">
                     <div class="flex flex-jc-sb">
                         <p class="white_txt">PROFIT IN 2022</p>
@@ -170,13 +177,12 @@
                     <canvas id="myChart"></canvas>
                 </div>
          </div>
-         
-        </div> 
     <!-- End of Dashboard  Chart-->
 
     <!-- Dashboard Summary-->
-    <div class="flex flex-column"> 
-        <div class="mb mt"><h3>Work Orders Overview</h3></div>
+        <div class="flex flex-jc-sb flex-ai-c mb mt">
+            
+        </div>
         <div class="flex flex-column dashboard_box white_bg">
             
             <div class="flex flex-gap-05 mb">
@@ -210,7 +216,6 @@
                 </div>
             </div>
         </div> 
-    </div> 
         <!-- End of Dashboard Summary-->
 
     </div> <!-- End of milestone element-->
