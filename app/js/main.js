@@ -1,44 +1,26 @@
 
 // Starting data structure for Day, Week and Month
 
-const labels = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
-const data1 = [900,820,910,850,960,610,600,2500,2200,2600,2300,3000]
-const data2 = [282,350,411,502,635,980,940,850,1000,1500,2000,2400]
+let labels = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+const initialData = [900,820,910,850,960,610,600,2500,2200,2600,2300,3000]
 
 // Random arrays for week and month, using array push and mathfloor plus conditional
 
-// Starting empty arrays so those could be created when option selected at first
+// Starting empty arrays so those could be created when a xls or xlsx file is uploaded
 
-let array_length;
-const monthLabel = [];
-const weekLabel = [];
-const yearLabel = [];
-const randomArrayMonth1 = [];
-const randomArrayMonth2 = [];
-const randomArrayWeek1 = [];
-const randomArrayWeek2 = [];
-const randomArrayYear1 = [];
-const randomArrayYear2 = [];
+const newLabel = [];
+const newData = [];
 
 const data = {
     labels,
     datasets: [{
-        data: data1,
-        label: "2022",
+        data: initialData,
         borderColor: "white",
         fill: true,
         backgroundColor: "rgb(62,149,205,0.05)",
         pointRadius: 0,
         pointHitRadius: 20,
-    }, {
-        data: data2,
-        label: "2021",
-        borderColor: "white",
-        borderDash: [6,6],
-        pointRadius: 0,
-        pointHitRadius: 20,
-    }
-]
+    }]
 }
 
 //chart data object
@@ -69,14 +51,13 @@ const ctx = document.querySelector("#myChart");
 let myChart = new Chart(ctx,config);
     
 
-// Chart update function, destroys and re-render with line or bar depending on the selected option (unused at the moment but will adjust for next challenge)
+// Chart update function when new xls document gets uploaded
 
-function changeChart(chartType) {
+function updateChart(a , b) {
  
-    myChart.destroy();
-    config.type = chartType.value;
-    myChart = new Chart(ctx,config);
-
+    data.datasets[0].data = a;
+    data.labels = b;
+    myChart.update();
 };
 
 // Current and previous Year, month and week
@@ -102,101 +83,6 @@ currentDate = new Date();
 const weekNumber = Math.ceil((currentDate.getDay() + 1 + days) / 7);
 const previousWeekNumber = Math.ceil((currentDate.getDay() + 1 + days) / 7)-1;
 
-
-// Period time update function: week, month and year with conditionals, array push for loops and event listener
-//Added an extra conditional to confirm if already have data or not to avoid keep pushing more to the array and use the alredy randonmly created data instead
-
-const selectElement = document.querySelector("#timeFrame");
-
-// randomize function in integer and with a min max value
-function getRndInteger(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) ) + min;
-  }
-
-
-selectElement.addEventListener('change', (event) => {
-    if (event.target.value === "month"){
-
-        if(randomArrayMonth1.length === 0 ){
-        array_length = 30;
-        
-
-        for(let i=0; i<array_length; i++) {
-            randomArrayMonth1.push(getRndInteger(100,600));
-            randomArrayMonth2.push(getRndInteger(100,600));
-        }
-        data.datasets[0].data = randomArrayMonth1;
-        data.datasets[1].data = randomArrayMonth2;
-        data.datasets[0].label = currentMonth;
-        data.datasets[1].label = previousMonth;
-        document.querySelector('#current').innerHTML = currentMonth;
-        document.querySelector('#previous').innerHTML = previousMonth;
-        
-
-    } else {
-        data.datasets[0].data = randomArrayMonth1;
-        data.datasets[1].data = randomArrayMonth2;
-        data.datasets[0].label = currentMonth;
-        data.datasets[1].label = previousMonth;
-        document.querySelector('#current').innerHTML = currentMonth;
-        document.querySelector('#previous').innerHTML = previousMonth;
-    }   
-
-    } if (event.target.value === "week") {
-
-        if(randomArrayWeek1.length === 0 ){
-        array_length = 13;
-
-        for(let i=1; i<array_length; i++) {
-            randomArrayWeek1.push(getRndInteger(10,150));
-            randomArrayWeek2.push(getRndInteger(10,150));
-
-        }
-        data.datasets[0].data = randomArrayWeek1;
-        data.datasets[1].data = randomArrayWeek2;
-        data.datasets[0].label = "W " + weekNumber;
-        data.datasets[1].label = "W " + previousWeekNumber;
-        document.querySelector('#current').innerHTML = "W: " + weekNumber;
-        document.querySelector('#previous').innerHTML = "W: " + previousWeekNumber;
-
-    } else {
-        data.datasets[0].data = randomArrayWeek1;
-        data.datasets[1].data = randomArrayWeek2;
-        data.datasets[0].label = "W " + weekNumber;
-        data.datasets[1].label = "W " + previousWeekNumber;
-        document.querySelector('#current').innerHTML = "W: " + weekNumber;
-        document.querySelector('#previous').innerHTML = "W: " + previousWeekNumber;
-    }
-
-} if (event.target.value === "year"){
-
-        if(randomArrayYear1.length === 0 ){
-
-        array_length = 12;
-
-        for(let i=0; i<array_length; i++) {
-            randomArrayYear1.push(getRndInteger(282,2400));
-            randomArrayYear2.push(getRndInteger(282,2400));
-        }
-        data.datasets[0].data = randomArrayYear1;
-        data.datasets[1].data = randomArrayYear2;
-        data.datasets[0].label = currentYear;
-        data.datasets[1].label = previousYear;
-        document.querySelector('#current').innerHTML = currentYear;
-        document.querySelector('#previous').innerHTML = previousYear;
-
-        } else {
-            data.datasets[0].data = randomArrayYear1;
-            data.datasets[1].data = randomArrayYear2;
-            data.datasets[0].label = currentYear;
-            data.datasets[1].label = previousYear;
-            document.querySelector('#current').innerHTML = currentYear;
-            document.querySelector('#previous').innerHTML = previousYear;
-
-    }
-}
-        myChart.update();
-})
 
 //Function Login & Signup menu
 //Simplified function with ternary operator
@@ -376,7 +262,8 @@ function logoff () {
     document.querySelector("#loginPassword").value = "";
     document.querySelector("#errorImgLogin").style.display = "none";
     document.querySelector("#errorImgUpload").style.display = "none";
-    document.querySelector("#errorMsgUpload").style.display = "none";      
+    document.querySelector("#errorMsgUpload").style.display = "none";
+    document.querySelector("#errorMsgLogin").style.display = "none";       
 }
 
 //function upload data xls or xlsx
@@ -414,7 +301,9 @@ function excelFileToJSON (file) {
         reader.onload = function (e){
             const data = e.target.result;
             const workbook = XLSX.read(data, {
-                type: "binary"
+                type: "binary",
+                cellText:false,
+                cellDates:true,
             });
             const result = {};
             const firstSheetName = workbook.SheetNames[0];
@@ -448,6 +337,16 @@ function excelFileToJSON (file) {
             document.querySelector("#unrelease").innerHTML = (unrelease);
             document.querySelector("#onhold").innerHTML = (onhold);
 
+            xlsArrayShipment.forEach((object) => {
+                newLabel.push(new Date(object.date).toLocaleDateString('en-US', options));
+                newData.push(object.amount);
+            });
+
+            console.log(newData);
+            console.log(newLabel);
+
+            updateChart(newData, newLabel);
+           
         }
     } catch(e) {
         console.error(e);
