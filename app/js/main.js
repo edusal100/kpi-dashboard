@@ -374,12 +374,15 @@ function logoff () {
     document.querySelector(".dashboard").style.display = "none";
     document.querySelector("#loginEmail").value = "";
     document.querySelector("#loginPassword").value = "";
-    document.querySelector("#errorImgLogin").style.display = "none";    
+    document.querySelector("#errorImgLogin").style.display = "none";
+    document.querySelector("#errorImgUpload").style.display = "none";
+    document.querySelector("#errorMsgUpload").style.display = "none";      
 }
 
 //function upload data xls or xlsx
 let files = "";
-let xlsArray = [];
+let xlsArrayDiscrete = [];
+let xlsArrayShipment = [];
 document.querySelector("#addData").addEventListener("click" , upload)
 
 function upload (){
@@ -392,8 +395,11 @@ function upload (){
     if (extension == ".XLS" || extension == ".XLSX") {
         excelFileToJSON(files[0]);
         document.querySelector("#errorMsgUpload").innerHTML = ("")
+        document.querySelector("#errorImgUpload").style.display = "none"
     } else {
-        document.querySelector("#errorMsgUpload").innerHTML = ("Please select a valid excel file")
+        document.querySelector("#errorImgUpload").style.display = "block";
+        document.querySelector("#errorMsgUpload").innerHTML = ("Please select a valid excel file");
+        
     }
 }
 
@@ -412,23 +418,28 @@ function excelFileToJSON (file) {
             });
             const result = {};
             const firstSheetName = workbook.SheetNames[0];
-            const jsonData = XLSX.utils.sheet_to_json(workbook.Sheets[firstSheetName]);
-            const xlsJson = (JSON.stringify(jsonData));
-            xlsArray = (JSON.parse(xlsJson));
+            const secondSheetName = workbook.SheetNames[1];
+        
+            const jsonDataDiscrete = XLSX.utils.sheet_to_json(workbook.Sheets[firstSheetName]);
+            const jsonDataShipment = XLSX.utils.sheet_to_json(workbook.Sheets[secondSheetName]);
+            const xlsJsonDiscrete = (JSON.stringify(jsonDataDiscrete));
+            const xlsJsonShipment = (JSON.stringify(jsonDataShipment));
+            xlsArrayRelease = (JSON.parse(xlsJsonDiscrete));
+            xlsArrayShipment = (JSON.parse(xlsJsonShipment));
 
-            const amount = xlsArray.reduce((accumulator, object) => {
-                return accumulator + object.price;
+            const amount = xlsArrayShipment.reduce((accumulator, object) => {
+                return accumulator + object.amount;
             },0)
 
-            const release = xlsArray.reduce((accumulator, object) => {
+            const release = xlsArrayRelease.reduce((accumulator, object) => {
                 return accumulator + (object.status == "Released");
             },0)
 
-            const unrelease = xlsArray.reduce((accumulator, object) => {
+            const unrelease = xlsArrayRelease.reduce((accumulator, object) => {
                 return accumulator + (object.status == "Unreleased");
             },0)
 
-            const onhold = xlsArray.reduce((accumulator, object) => {
+            const onhold = xlsArrayRelease.reduce((accumulator, object) => {
                 return accumulator + (object.status == "On Hold");
             },0)
 

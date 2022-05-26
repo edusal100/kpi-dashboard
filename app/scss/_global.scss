@@ -316,7 +316,7 @@ label {
     border-radius: 2rem;
 }
 
-#errorImgLogin, #errorImgSignup {
+#errorImgLogin, #errorImgSignup, #errorImgUpload {
     width: 1.5rem;
 }
 
@@ -338,7 +338,7 @@ label {
     width: 2rem;
 }
 
-.dashboard, #loginScreen, #signUpScreen, #errorImgLogin, #errorImgSignup {
+.dashboard,#errorImgUpload, #loginScreen, #signUpScreen, #errorImgLogin, #errorImgSignup {
     display: none;
 }
 

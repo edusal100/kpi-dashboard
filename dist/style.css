@@ -361,7 +361,7 @@ body .active {
   border-radius: 2rem;
 }
 
-body #errorImgLogin, body #errorImgSignup {
+body #errorImgLogin, body #errorImgSignup, body #errorImgUpload {
   width: 1.5rem;
 }
 
@@ -383,6 +383,6 @@ body .logo {
   width: 2rem;
 }
 
-body .dashboard, body #loginScreen, body #signUpScreen, body #errorImgLogin, body #errorImgSignup {
+body .dashboard, body #errorImgUpload, body #loginScreen, body #signUpScreen, body #errorImgLogin, body #errorImgSignup {
   display: none;
 }
