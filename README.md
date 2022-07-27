@@ -1,7 +1,7 @@
 # kpi-dashboard
 
-A simple dashboard to see production metrics from an uploaded Excel file
-Created for CoderHouse Javascript course with HTML5, Javascript Vanilla, SASS for ui, ChartJS for charts, Openweather API and SheetJS to upload/read xls files
+A simple dashboard to see production metrics from an uploaded Excel file.
+Created for CoderHouse Javascript course with HTML5, Javascript Vanilla, SASS for ui, ChartJS for charts, Openweather API and SheetJS to upload/read xls files.
 
 ## Installation
 
